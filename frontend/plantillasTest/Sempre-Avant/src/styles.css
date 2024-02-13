@@ -7,14 +7,11 @@ body{
     background-color: #904cb4 !important;
 }
 
-.py-5 {
-    background-color: #16d8d8;
+.jumbo {
     background-image: url("https://images.pexels.com/photos/9303995/pexels-photo-9303995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    display: block;
-    background-attachment: fixed;
     color: greenyellow;
-    padding: 10%;
     text-align: center;
+    background-size: cover;
 }
 
 #footer{
