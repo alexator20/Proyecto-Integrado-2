@@ -3,6 +3,15 @@
     background-color: #904cb4 !important;
 }
 
+.jumbotron {
+    background-color: #000000;
+    background-image: url("https://images.pexels.com/photos/9303995/pexels-photo-9303995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-attachment: fixed;
+    color: white;
+    padding: 10%;
+    text-align: center;
+}
+
 #footer{
     background-color: #904cb4 !important;
 }
