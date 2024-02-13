@@ -8,9 +8,9 @@ body{
 }
 
 .py-5 {
-    background-color: #13bd1b;
+    background-color: #16d8d8;
     background-image: url("https://images.pexels.com/photos/9303995/pexels-photo-9303995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-repeat: no-repeat;
+    display: block;
     background-attachment: fixed;
     color: greenyellow;
     padding: 10%;
