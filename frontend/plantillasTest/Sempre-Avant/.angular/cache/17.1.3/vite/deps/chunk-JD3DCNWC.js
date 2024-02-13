@@ -59,7 +59,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-JNM7CA4Q.js";
+} from "./chunk-C4GOIIZP.js";
 
 // node_modules/@angular/common/fesm2022/common.mjs
 var _DOM = null;
@@ -1925,20 +1925,20 @@ var _NgClass = class _NgClass {
   The NgClass directive uses the custom change detection algorithm for its inputs. The custom
   algorithm is necessary since inputs are represented as complex object or arrays that need to be
   deeply-compared.
-     This algorithm is perf-sensitive since NgClass is used very frequently and its poor performance
+      This algorithm is perf-sensitive since NgClass is used very frequently and its poor performance
   might negatively impact runtime performance of the entire change detection cycle. The design of
   this algorithm is making sure that:
   - there is no unnecessary DOM manipulation (CSS classes are added / removed from the DOM only when
   needed), even if references to bound objects change;
   - there is no memory allocation if nothing changes (even relatively modest memory allocation
   during the change detection cycle can result in GC pauses for some of the CD cycles).
-     The algorithm works by iterating over the set of bound classes, staring with [class] binding and
+      The algorithm works by iterating over the set of bound classes, staring with [class] binding and
   then going over [ngClass] binding. For each CSS class name:
   - check if it was seen before (this information is tracked in the state map) and if its value
   changed;
   - mark it as "touched" - names that are not marked are not present in the latest set of binding
   and we can remove such class name from the internal data structures;
-     After iteration over all the CSS class names we've got data structure with all the information
+      After iteration over all the CSS class names we've got data structure with all the information
   necessary to synchronize changes to the DOM - it is enough to iterate over the state map, flush
   changes to the DOM and reset internal data structures so those are ready for the next change
   detection cycle.
@@ -4786,4 +4786,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-L22JU2LC.js.map
+//# sourceMappingURL=chunk-JD3DCNWC.js.map
