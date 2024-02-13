@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 #header{
     background-color: #904cb4 !important;
 }
 
-.jumbotron {
-    background-color: #000000;
+.py-5 {
+    background-color: #13bd1b;
     background-image: url("https://images.pexels.com/photos/9303995/pexels-photo-9303995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
+    color: greenyellow;
     padding: 10%;
     text-align: center;
 }
