@@ -17,4 +17,29 @@
         <li>Your template at <code>/app/templates/grupo/index.html.twig</code></li>
     </ul>
 </div>
+
+ <table>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>CUIDAD</th>
+                    <th>DELETE</th>
+                    <th>UPDATE</th>
+                </tr>
+
+                {% for row in resultados %}
+                <tr>
+                    <!-- enlaces al detalle -->
+                    <td id="texto"><a href='http://localhost:8000/client/detail/{{ row.getId }}'> {{row.getNombre}} </a></td>
+                    <td>{{row.getCiudad}}</td>
+
+                    <td style='text-align: center;'><a href='http://localhost:8000/delete/{{ row.getId }}'><img
+                                src="https://www.pngmart.com/files/3/Red-Cross-PNG-Photo.png" alt="Delete"
+                                width='20'></a></td>
+                    <td style='text-align: center;'><a href='http://localhost:8000/update/{{row.getId}}'><img
+                                src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Update"
+                                width='20'></a></td>
+                </tr>
+                {% endfor %}
+
+            </table>
 {% endblock %}
