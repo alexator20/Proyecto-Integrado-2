@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EventoRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,6 +24,14 @@ class Evento
 
     #[ORM\Column]
     private ?int $numeroparticipantes = null;
+
+    #[ORM\OneToMany(targetEntity: RelUsuarioEvento::class, mappedBy: 'evento')]
+    private Collection $relUsuarioEventos;
+
+    public function __construct()
+    {
+        $this->relUsuarioEventos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,6 +70,36 @@ class Evento
     public function setNumeroparticipantes(int $numeroparticipantes): static
     {
         $this->numeroparticipantes = $numeroparticipantes;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RelUsuarioEvento>
+     */
+    public function getRelUsuarioEventos(): Collection
+    {
+        return $this->relUsuarioEventos;
+    }
+
+    public function addRelUsuarioEvento(RelUsuarioEvento $relUsuarioEvento): static
+    {
+        if (!$this->relUsuarioEventos->contains($relUsuarioEvento)) {
+            $this->relUsuarioEventos->add($relUsuarioEvento);
+            $relUsuarioEvento->setEvento($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRelUsuarioEvento(RelUsuarioEvento $relUsuarioEvento): static
+    {
+        if ($this->relUsuarioEventos->removeElement($relUsuarioEvento)) {
+            // set the owning side to null (unless already changed)
+            if ($relUsuarioEvento->getEvento() === $this) {
+                $relUsuarioEvento->setEvento(null);
+            }
+        }
 
         return $this;
     }

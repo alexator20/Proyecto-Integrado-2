@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsuarioRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UsuarioRepository::class)]
@@ -25,6 +27,14 @@ class Usuario
     #[ORM\ManyToOne(inversedBy: 'usuarios')]
     #[ORM\JoinColumn(nullable: false)]
     private ?grupo $grupo_perteneciente = null;
+
+    #[ORM\OneToMany(targetEntity: RelUsuarioEvento::class, mappedBy: 'usuario')]
+    private Collection $relUsuarioEventos;
+
+    public function __construct()
+    {
+        $this->relUsuarioEventos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +85,36 @@ class Usuario
     public function setGrupoPerteneciente(?grupo $grupo_perteneciente): static
     {
         $this->grupo_perteneciente = $grupo_perteneciente;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RelUsuarioEvento>
+     */
+    public function getRelUsuarioEventos(): Collection
+    {
+        return $this->relUsuarioEventos;
+    }
+
+    public function addRelUsuarioEvento(RelUsuarioEvento $relUsuarioEvento): static
+    {
+        if (!$this->relUsuarioEventos->contains($relUsuarioEvento)) {
+            $this->relUsuarioEventos->add($relUsuarioEvento);
+            $relUsuarioEvento->setUsuario($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRelUsuarioEvento(RelUsuarioEvento $relUsuarioEvento): static
+    {
+        if ($this->relUsuarioEventos->removeElement($relUsuarioEvento)) {
+            // set the owning side to null (unless already changed)
+            if ($relUsuarioEvento->getUsuario() === $this) {
+                $relUsuarioEvento->setUsuario(null);
+            }
+        }
 
         return $this;
     }
