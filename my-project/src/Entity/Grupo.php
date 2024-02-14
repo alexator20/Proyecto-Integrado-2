@@ -24,9 +24,13 @@ class Grupo
     #[ORM\OneToMany(targetEntity: Usuario::class, mappedBy: 'grupo_perteneciente')]
     private Collection $usuarios;
 
+    #[ORM\OneToMany(targetEntity: RelGrupoEvento::class, mappedBy: 'grupo')]
+    private Collection $relGrupoEventos;
+
     public function __construct()
     {
         $this->usuarios = new ArrayCollection();
+        $this->relGrupoEventos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,6 +86,36 @@ class Grupo
             // set the owning side to null (unless already changed)
             if ($usuario->getGrupoPerteneciente() === $this) {
                 $usuario->setGrupoPerteneciente(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RelGrupoEvento>
+     */
+    public function getRelGrupoEventos(): Collection
+    {
+        return $this->relGrupoEventos;
+    }
+
+    public function addRelGrupoEvento(RelGrupoEvento $relGrupoEvento): static
+    {
+        if (!$this->relGrupoEventos->contains($relGrupoEvento)) {
+            $this->relGrupoEventos->add($relGrupoEvento);
+            $relGrupoEvento->setGrupo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRelGrupoEvento(RelGrupoEvento $relGrupoEvento): static
+    {
+        if ($this->relGrupoEventos->removeElement($relGrupoEvento)) {
+            // set the owning side to null (unless already changed)
+            if ($relGrupoEvento->getGrupo() === $this) {
+                $relGrupoEvento->setGrupo(null);
             }
         }
 
