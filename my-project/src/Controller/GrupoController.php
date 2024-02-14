@@ -25,7 +25,7 @@ class GrupoController extends AbstractController
         ]);
     }
 
-    #[Route('/grupo', name: 'grupo_api', methods:['get'] )]
+    #[Route('/grupo_api', name: 'grupo_api', methods:['get'] )]
     public function indice(ManagerRegistry $doctrine): JsonResponse
     {
         $products = $doctrine
