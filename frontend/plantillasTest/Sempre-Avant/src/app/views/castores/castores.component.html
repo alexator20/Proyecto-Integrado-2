@@ -12,7 +12,7 @@
 <div class="container my-3">
   <!-- Nombre de la sección -->
   <div class="row">
-    <div class="col-md-6 sm-3 ">
+    <div class=" col-md-12 sm-3 ">
       <div class="p-3 border bg-light" style="text-align: center;">Jovenes Castores</div>
     </div>
   </div>
@@ -21,13 +21,6 @@
   <div class="row my-3">
     <div class="col-12">
       <div class="p-3 border bg-light">Imagen sección</div>
-    </div>
-  </div>
-  
-  <!-- Texto que describe la sección/imágen -->
-  <div class="row">
-    <div class="col-12">
-      <div class="p-3 border bg-light">alguna imagen que coincida mejor con los colores corporativos o implemente un color sólido relacionado con la sección o de nuestros colores corporativos</div>
     </div>
   </div>
   
@@ -56,6 +49,90 @@
     </div>
   </div>
   
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenedor Personalizado</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+  <style>
+    .custom-container {
+      background: #ffb30094; /* Ajusta este color al color de fondo deseado */
+      border-radius: 15px; /* Ajusta el radio del borde si es necesario */
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Sombra de caja opcional */
+    }
+    .custom-header {
+      text-align: center;
+      font-size: 1.5em; /* Ajusta el tamaño de fuente si es necesario */
+      font-weight: bold; /* Estilo de fuente en negrita */
+      margin-bottom: 15px; /* Margen inferior para el encabezado */
+    }
+    .custom-section {
+      margin-bottom: 15px; /* Margen inferior para cada sección */
+    }
+    .character-card {
+      text-align: center; /* Centra el texto de la tarjeta */
+    }
+    .character-image {
+      /* Añade estilos para las imágenes si es necesario */
+    }
+    .character-text {
+      /* Añade estilos para el texto de las tarjetas de personajes si es necesario */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="custom-container">
+    <div class="row">
+      <div class="col-12 custom-header">
+        Metodología de los Jóvenes Castores
+      </div>
+    </div>
+    <div class="row">
+      <!-- Repite este bloque para cada personaje -->
+      <div class="col-sm-6 col-md-4 col-lg-4 character-card">
+        <img src="path_to_image" alt="Keeo" class="character-image">
+        <p class="character-text">El sabio castor es el líder de la colonia de castores.</p>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4 character-card">
+        <img src="path_to_image" alt="Ras" class="character-image">
+        <p class="character-text">Ras el gato enseña a los castores a ser limpios y aseados.</p>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4 character-card">
+        <img src="path_to_image" alt="Salky" class="character-image">
+        <p class="character-text">El habilidoso pajarito siempre juega junto con el resto de amigos del bosque.</p>
+      </div>
+      <div class="col-md-4 col-lg-6 character-card">
+        <img src="path_to_image" alt="Baru" class="character-image">
+        <p class="character-text">La pequeña hormiguita siempre es trabajadora y recoge despues de jugar.</p>
+      </div><div class="col-sm-6 col-md-4 col-lg-6 character-card">
+        <img src="path_to_image" alt="Rebru" class="character-image">
+        <p class="character-text">El oso enseña a la colonia de castores los misterios y la importancia de la naturaleza.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 custom-section">
+        Ley de la Colonia
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 custom-section">
+        Oración del Joven Castor
+      </div>
+    </div>
+    <!-- ... otras secciones ... -->
+  </div>
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
