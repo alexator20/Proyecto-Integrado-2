@@ -19,7 +19,7 @@ class MainController extends AbstractController
     }
 
 
-    #[Route('/test', name: 'app_cliente')]
+    /* #[Route('/test', name: 'app_cliente')]
     public function list(Request $request): Response
     {
         $clienteRepository = $this->em->getRepository(RelGrupoEvento::class)->findAll();
@@ -28,5 +28,5 @@ class MainController extends AbstractController
             'controller_name'=>'bro me da igual',
             'resultados' => $clienteRepository
         ]);
-    }
+    } */
 }

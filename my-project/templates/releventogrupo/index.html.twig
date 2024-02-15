@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReleventogrupoController!{% endblock %}
+{% block title %}Hello GrupoController!{% endblock %}
 
 {% block body %}
 <style>
@@ -13,8 +13,33 @@
 
     This friendly message is coming from:
     <ul>
-        <li>Your controller at <code>/app/src/Controller/ReleventogrupoController.php</code></li>
-        <li>Your template at <code>/app/templates/releventogrupo/index.html.twig</code></li>
+        <li>Your controller at <code>/app/src/Controller/GrupoController.php</code></li>
+        <li>Your template at <code>/app/templates/grupo/index.html.twig</code></li>
     </ul>
 </div>
+
+ <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Grupo</th>
+                    <th>Evento</th>
+                </tr>
+
+                {% for row in resultados %}
+                <tr>
+                    <!-- enlaces al detalle -->
+                    <td id="texto"><a href='http://localhost:8000/client/detail/{{ row.getId }}'> {{row.getId}} </a></td>
+                    <td>{{row.getGrupo.getNombre}}</td>
+                     <td>{{row.getEvento.getNombre}}</td>
+
+                    <td style='text-align: center;'><a href='http://localhost:8000/delete/{{ row.getId }}'><img
+                                src="https://www.pngmart.com/files/3/Red-Cross-PNG-Photo.png" alt="Delete"
+                                width='20'></a></td>
+                    <td style='text-align: center;'><a href='http://localhost:8000/update/{{row.getId}}'><img
+                                src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Update"
+                                width='20'></a></td>
+                </tr>
+                {% endfor %}
+
+            </table>
 {% endblock %}
