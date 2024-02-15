@@ -9,10 +9,20 @@ body{
 
 .jumbo {
     background-image: url("https://images.pexels.com/photos/9303995/pexels-photo-9303995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    color: greenyellow;
+    color: rgb(30, 255, 0);
     text-align: center;
     background-size: cover;
     height: 70vh;
+    padding: 5%;
+}
+
+.container-fluid{
+    padding: 2%;
+}
+
+h1{
+    text-align: center;
+    padding: 3%;
 }
 
 #footer{
