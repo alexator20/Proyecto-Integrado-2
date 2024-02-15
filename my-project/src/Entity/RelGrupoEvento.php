@@ -21,6 +21,9 @@ class RelGrupoEvento
     #[ORM\JoinColumn(nullable: false)]
     private ?Evento $evento = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $puntuacionEventoGrupo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +49,18 @@ class RelGrupoEvento
     public function setEvento(?Evento $evento): static
     {
         $this->evento = $evento;
+
+        return $this;
+    }
+
+    public function getPuntuacionEventoGrupo(): ?int
+    {
+        return $this->puntuacionEventoGrupo;
+    }
+
+    public function setPuntuacionEventoGrupo(?int $puntuacionEventoGrupo): static
+    {
+        $this->puntuacionEventoGrupo = $puntuacionEventoGrupo;
 
         return $this;
     }
