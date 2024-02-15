@@ -18,7 +18,7 @@ class ReleventogrupoController extends AbstractController
         $this->em = $em;
     }
     
-    #[Route('/test', name: 'app_cliente')]
+    #[Route('/test', name: 'app_test')]
     public function list(Request $request): Response
     {
         $clienteRepository = $this->em->getRepository(RelGrupoEvento::class)->findAll();
@@ -27,5 +27,26 @@ class ReleventogrupoController extends AbstractController
             'controller_name'=>'bro me da igual',
             'resultados' => $clienteRepository
         ]);
+    }
+
+    #[Route('/puntajes', name: 'app_cliente')]
+    public function tuMetodo(EntityManagerInterface $entityManager): Response
+    {
+        $query = $entityManager->createQuery(
+            'SELECT grupo.id, grupo.nombre, SUM(rel.puntuacionEventoGrupo) AS total
+            FROM App\Entity\RelGrupoEvento rel
+            JOIN rel.grupo grupo
+            GROUP BY grupo.id, grupo.nombre'
+        );
+
+        $results = $query->getResult();
+        /* var_dump($results);
+        die(); */
+        return $this->render('releventogrupo/index.html.twig', [
+            'controller_name'=>'bro me da igual',
+            'resultados' => $results
+        ]);
+
+        // Manejar los resultados, renderizar una plantilla, etc.
     }
 }

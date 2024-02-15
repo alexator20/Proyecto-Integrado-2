@@ -21,21 +21,21 @@
  <table>
                 <tr>
                     <th>ID</th>
-                    <th>Grupo</th>
-                    <th>Evento</th>
+                    <th>nombre</th>
+                    <th>total</th>
                 </tr>
 
                 {% for row in resultados %}
                 <tr>
                     <!-- enlaces al detalle -->
-                    <td id="texto"><a href='http://localhost:8000/client/detail/{{ row.getId }}'> {{row.getId}} </a></td>
-                    <td>{{row.getGrupo.getNombre}}</td>
-                     <td>{{row.getEvento.getNombre}}</td>
+                    <td id="texto"><a href='http://localhost:8000/client/detail/{{ row.id }}'> {{row.id}} </a></td>
+                    <td>{{row.nombre}}</td>
+                     <td>{{row.total}}</td>
 
-                    <td style='text-align: center;'><a href='http://localhost:8000/delete/{{ row.getId }}'><img
+                    <td style='text-align: center;'><a href='http://localhost:8000/delete/{{ row.id }}'><img
                                 src="https://www.pngmart.com/files/3/Red-Cross-PNG-Photo.png" alt="Delete"
                                 width='20'></a></td>
-                    <td style='text-align: center;'><a href='http://localhost:8000/update/{{row.getId}}'><img
+                    <td style='text-align: center;'><a href='http://localhost:8000/update/{{row.id}}'><img
                                 src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Update"
                                 width='20'></a></td>
                 </tr>
