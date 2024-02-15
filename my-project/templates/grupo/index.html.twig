@@ -29,7 +29,7 @@
                 <tr>
                     <!-- enlaces al detalle -->
                     <td id="texto"><a href='http://localhost:8000/client/detail/{{ row.getId }}'> {{row.getId}} </a></td>
-                    <td>{{row.getGrupo}}</td>
+                    <td>{{row.getGrupo.getNombre}}</td>
 
                     <td style='text-align: center;'><a href='http://localhost:8000/delete/{{ row.getId }}'><img
                                 src="https://www.pngmart.com/files/3/Red-Cross-PNG-Photo.png" alt="Delete"
