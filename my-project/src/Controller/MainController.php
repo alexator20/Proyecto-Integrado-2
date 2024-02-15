@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\RelGrupoEvento;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,20 +17,15 @@ class MainController extends AbstractController
     {
         $this->em = $em;
     }
-    #[Route('/', name: 'app_home')]
-    public function home(): Response
-    {
-        return $this->render('grupo/index.html.twig', [
-            'controller_name' => 'EventoController',
-        ]);
-    }
 
-    #[Route('/clients', name: 'app_cliente')]
+
+    #[Route('/test', name: 'app_cliente')]
     public function list(Request $request): Response
     {
-        $clienteRepository = $this->em->getRepository(ReleventogrupoController::class)->findAll();
+        $clienteRepository = $this->em->getRepository(RelGrupoEvento::class)->findAll();
 
-        return $this->render('client/index.html', [
+        return $this->render('grupo/index.html.twig', [
+            'controller_name'=>'bro me da igual',
             'resultados' => $clienteRepository
         ]);
     }
