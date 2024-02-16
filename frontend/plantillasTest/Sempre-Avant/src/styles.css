@@ -3,6 +3,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+<<<<<<< Updated upstream
 h1{
     text-align: center;
     padding: 3%;
@@ -15,3 +16,5 @@ h1{
 #footer{
     background-color: #904cb4 !important;
 }
+=======
+>>>>>>> Stashed changes
