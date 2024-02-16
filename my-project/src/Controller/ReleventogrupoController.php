@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use DateTime;
 
 
@@ -48,5 +50,31 @@ class ReleventogrupoController extends AbstractController
         ]);
 
         // Manejar los resultados, renderizar una plantilla, etc.
+    }
+
+
+    #[Route('/relgrupoevento_api', name: 'relgrupoevento_api', methods:['get'] )]
+    public function indice(ManagerRegistry $doctrine, EntityManagerInterface $entityManager): JsonResponse
+    {
+        $query = $entityManager->createQuery(
+            'SELECT grupo.id, grupo.nombre, SUM(rel.puntuacionEventoGrupo) AS total
+            FROM App\Entity\RelGrupoEvento rel
+            JOIN rel.grupo grupo
+            GROUP BY grupo.id, grupo.nombre'
+        );
+
+        $results = $query->getResult();
+
+        $data = [];
+   
+        for ($i=0; $i < count($results); $i++) { 
+            $data[] = [
+                'id' => $results[$i]['id'],
+                'nombre' => $results[$i]['nombre'],
+                'puntos' => $results[$i]['total'],
+            ];
+        }
+   
+        return $this->json($data);
     }
 }
