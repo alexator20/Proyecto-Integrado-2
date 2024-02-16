@@ -77,4 +77,30 @@ class ReleventogrupoController extends AbstractController
    
         return $this->json($data);
     }
+
+    #[Route('/relgrupoevento_api2', name: 'relgrupoevento_api2', methods:['get'] )]
+    public function prueba(ManagerRegistry $doctrine, EntityManagerInterface $entityManager): JsonResponse
+    {
+        $query = $entityManager->createQuery(
+            'SELECT grupo.id, grupo.nombre, grupo.seccion, SUM(r.puntuacionEventoGrupo) AS total
+            FROM App\Entity\RelGrupoEvento r
+            JOIN r.grupo grupo
+            WHERE grupo.seccion = :seccion
+            GROUP BY grupo.id'
+        );
+        $query->setParameter('seccion', 'Tropa');
+        $results = $query->getResult();
+        $data = [];
+   
+        for ($i=0; $i < count($results); $i++) { 
+            $data[] = [
+                'id' => $results[$i]['id'],
+                'nombre' => $results[$i]['nombre'],
+                'puntos' => $results[$i]['total'],
+                'seccion' => $results[$i]['seccion'],
+            ];
+        }
+   
+        return $this->json($data);
+    }
 }
