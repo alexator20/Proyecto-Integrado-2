@@ -2,6 +2,10 @@
     padding: 10px;
 }
 
+.fondo{
+    background-color: #4ca4b4;
+}
+
 #footer{
     background-color: #904cb4 !important;
 }
