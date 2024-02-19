@@ -1,27 +1,30 @@
-body {
-    background-size: cover;
-    color: #000000; /* Cambia esto al color de tu texto */
-  }
-  .container {
-    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  .logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 150px; /* o el tamaño que prefieras para el logo */
-  }
-  h1 {
-    color: #DAA520; /* Cambia esto al color que desees para el título */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .text-section {
-    margin-bottom: 10px;
-  }
-  .list-section {
-    padding-left: 20px;
-  }
+.custom-container {
+  background: #ff313190;
+  /* Ajusta este color al color de fondo deseado */
+  border-radius: 15px;
+  /* Ajusta el radio del borde si es necesario */
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* Sombra de caja opcional */
+}
+
+.custom-header {
+  text-align: center;
+  font-size: 1.5em;
+  /* Ajusta el tamaño de fuente si es necesario */
+  font-weight: bold;
+  /* Estilo de fuente en negrita */
+  margin-bottom: 15px;
+  /* Margen inferior para el encabezado */
+}
+
+.custom-section {
+  margin-bottom: 15px;
+  /* Margen inferior para cada sección */
+}
+
+.character-card {
+  text-align: center;
+  /* Centra el texto de la tarjeta */
+}
