@@ -403,6 +403,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/password-hasher' => array(
+            'pretty_version' => 'v6.3.12',
+            'version' => '6.3.12.0',
+            'reference' => '513140986f5d6ca1b1ef86f47166a36654571bfe',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/password-hasher',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/polyfill-ctype' => array(
             'dev_requirement' => false,
             'replaced' => array(

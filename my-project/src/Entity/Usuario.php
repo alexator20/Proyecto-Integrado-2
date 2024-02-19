@@ -31,6 +31,9 @@ class Usuario
     #[ORM\OneToMany(targetEntity: RelUsuarioEvento::class, mappedBy: 'usuario')]
     private Collection $relUsuarioEventos;
 
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
+
     public function __construct()
     {
         $this->relUsuarioEventos = new ArrayCollection();
@@ -115,6 +118,18 @@ class Usuario
                 $relUsuarioEvento->setUsuario(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
 
         return $this;
     }

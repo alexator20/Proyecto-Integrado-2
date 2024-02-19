@@ -46,6 +46,7 @@ class ComposerStaticInitaff1e4d75476bf2610d81763f440fbf8
             'Symfony\\Component\\PropertyInfo\\' => 31,
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\Process\\' => 26,
+            'Symfony\\Component\\PasswordHasher\\' => 33,
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
@@ -189,6 +190,10 @@ class ComposerStaticInitaff1e4d75476bf2610d81763f440fbf8
         'Symfony\\Component\\Process\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
+        ),
+        'Symfony\\Component\\PasswordHasher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/password-hasher',
         ),
         'Symfony\\Component\\OptionsResolver\\' => 
         array (
