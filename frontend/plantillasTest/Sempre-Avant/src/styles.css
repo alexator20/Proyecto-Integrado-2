@@ -23,3 +23,22 @@ h1{
 #footer{
     background-color: #904cb4 !important;
 }
+  .custom-header {
+    text-align: center;
+    font-size: 1.5em;
+    /* Ajusta el tamaño de fuente si es necesario */
+    font-weight: bold;
+    /* Estilo de fuente en negrita */
+    margin-bottom: 15px;
+    /* Margen inferior para el encabezado */
+  }
+
+  .custom-section {
+    margin-bottom: 15px;
+    /* Margen inferior para cada sección */
+  }
+
+  .character-card {
+    text-align: center;
+    /* Centra el texto de la tarjeta */
+  }
