@@ -1,0 +1,12 @@
+.icons{
+    height: 15vh;
+    margin: 7vh;
+}
+
+.btn{
+    background-color: #846ae1;
+}
+.btn:hover{
+    background-color: #904cb4 !important;
+    color: white;
+}
