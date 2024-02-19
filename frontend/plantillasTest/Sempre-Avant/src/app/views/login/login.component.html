@@ -12,12 +12,14 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12">
-                                <form class="g-5 justify-content-center">
+                                <!-- form -->
+                                
+                                <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
                                     <div class="container col-12 col-md-7 justify-content-center">
                                         <div class="row justify-content-center">
                                             <div class="mb-3 col-12">
-                                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                               <input style="border: 2px solid #904cb4 !important;" type="email"
+                                                <label for="username" class="form-label">Username</label>
+                                               <input style="border: 2px solid #904cb4 !important;" id="username" formControlName="username" type="text"
                                                     class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 <div id="emailHelp" class="form-text">Tu usuario personal y tu contraseña de grupo.
                                                 </div>
@@ -27,7 +29,7 @@
                                         <div class="row justify-content-center">
                                             <div class="mb-3 col-12">
                                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                                <input style="border: 2px solid #904cb4 !important;" type="password"
+                                                <input style="border: 2px solid #904cb4 !important;" id="password" formControlName="password" type="password"
                                                     class="form-control" id="exampleInputPassword1">
                                             </div>
                                         </div>
@@ -38,12 +40,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-
                                 </form>
-                                
+                                <!-- form -->
                             </div>
-        
                         </div>
                     </div>
                 </div>
