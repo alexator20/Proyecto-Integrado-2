@@ -35,7 +35,6 @@ export const routes: Routes = [
     { path: 'clan', component: ClanComponent},
     { path: 'clan-cast', component: ClanCastComponent},
     { path: 'scouters', component: ScoutersComponent},
-    { path: 'badenpowell', component: BadenPowellComponent},
     { path: 'cronologia', component: CronologiaComponent},
     { path: 'scouters-cast', component: ScoutersCastComponent},
     { path: 'badenpowell', component: BadenPowellComponent},
