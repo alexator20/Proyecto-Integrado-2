@@ -28,3 +28,12 @@ p{
     font-size: 20px;
 }
 
+.carousel-control-prev{
+    background-color: black;
+    width: 7vh;
+}
+
+.carousel-control-next{
+    background-color: black;
+    width: 7vh;
+}
