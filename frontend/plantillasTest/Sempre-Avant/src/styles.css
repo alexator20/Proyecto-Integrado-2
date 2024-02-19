@@ -3,6 +3,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.nav-link{
+    color:white
+}
+
+header{
+    background-color: #904cb4 !important;
+}
+
 h1{
     text-align: center;
     padding: 3%;
