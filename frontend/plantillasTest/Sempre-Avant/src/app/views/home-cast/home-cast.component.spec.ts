@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EscoltaComponent } from './escolta.component';
+import { HomeCastComponent } from './home-cast.component';
 
-describe('EscoltaComponent', () => {
-  let component: EscoltaComponent;
-  let fixture: ComponentFixture<EscoltaComponent>;
+describe('HomeCastComponent', () => {
+  let component: HomeCastComponent;
+  let fixture: ComponentFixture<HomeCastComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EscoltaComponent]
+      imports: [HomeCastComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EscoltaComponent);
+    fixture = TestBed.createComponent(HomeCastComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,55 @@
+<main>
+
+    <div class="row justify-content-center" style="background-color: lightgray;">
+        <div class="col-12 col-md-7">
+            <div class="container-fluid py-5">
+                <div class="container" style="background-color: white; border: 1px solid white; border-radius: 7px;">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-12 d-flex justify-content-center">
+                                <img class="icons" src="../../../assets/imgs/loginnegro.png" alt="personita login">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <!-- form -->
+                                
+                                <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+                                    <div class="container col-12 col-md-7 justify-content-center">
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="username" class="form-label">Username</label>
+                                               <input style="border: 2px solid #904cb4 !important;" id="username" formControlName="username" type="text"
+                                                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                <div id="emailHelp" class="form-text">Tu usuario personal y tu contraseña de grupo.
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="password" formControlName="password" type="password"
+                                                    class="form-control" id="exampleInputPassword1">
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                            <div class="mb-3 col-9 col-md-3">
+                                                <button type="submit" class="btn">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- form -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</main>
