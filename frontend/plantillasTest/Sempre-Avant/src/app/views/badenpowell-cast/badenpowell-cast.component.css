@@ -1,0 +1,42 @@
+.titCard{
+    display: flex;
+    align-self: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    margin-left: -30px;
+    text-align: center;
+    padding: 3%;
+}
+
+.titPeq{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.card{
+    margin:5px;
+    border-width: 3px;
+    border-color: rgb(148, 107, 148);
+}
+
+.linkS{
+    text-decoration: none;
+    color:darkred
+}
+
+.textoP{
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.textLink{
+    font-size: 20px;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 300px;
+}
+
