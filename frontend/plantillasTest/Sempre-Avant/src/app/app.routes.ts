@@ -26,7 +26,7 @@ import { BackofficeComponent } from './views/backoffice/backoffice.component';
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
     { path: '', component: HomeComponent},
-    { path: '/', component: HomeComponent},
+    /* { path: '/', component: HomeComponent}, */
     { path: 'home', component: HomeComponent},
     { path: 'home-cast', component: HomeCastComponent},
     { path: 'test', component: TestComponent},
