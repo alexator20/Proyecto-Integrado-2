@@ -18,6 +18,7 @@ import { ClanCastComponent } from './views/clan-cast/clan-cast.component';
 import { ScoutersCastComponent } from './views/scouters-cast/scouters-cast.component';
 import { BadenpowellCastComponent } from './views/badenpowell-cast/badenpowell-cast.component';
 import { LoginComponent } from './views/login/login.component';
+import { SantJordiComponent } from './views/sant-jordi/sant-jordi.component';
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
@@ -40,6 +41,7 @@ export const routes: Routes = [
     { path: 'scouters-cast', component: ScoutersCastComponent},
     { path: 'badenpowell', component: BadenPowellComponent},
     { path: 'badenpowell-cast', component: BadenpowellCastComponent},
-    { path: 'login', component: LoginComponent}
+    { path: 'login', component: LoginComponent},
+    { path: 'santjordi', component: SantJordiComponent}
 ];
 
