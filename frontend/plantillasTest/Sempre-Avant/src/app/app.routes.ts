@@ -19,6 +19,8 @@ import { ScoutersCastComponent } from './views/scouters-cast/scouters-cast.compo
 import { BadenpowellCastComponent } from './views/badenpowell-cast/badenpowell-cast.component';
 import { LoginComponent } from './views/login/login.component';
 import { SantJordiComponent } from './views/sant-jordi/sant-jordi.component';
+import { ContactoComponent } from './views/contacto/contacto.component';
+import { ContactoCastComponent } from './views/contacto-cast/contacto-cast.component';
 import { BackofficeComponent } from './views/backoffice/backoffice.component';
 
 export const routes: Routes = [
@@ -45,6 +47,8 @@ export const routes: Routes = [
     { path: 'badenpowell-cast', component: BadenpowellCastComponent},
     { path: 'login', component: LoginComponent},
     { path: 'santjordi', component: SantJordiComponent},
+    { path: 'contacto', component: ContactoComponent},
+    { path: 'contacto-cast', component: ContactoCastComponent},
     { path: 'admin', component: BackofficeComponent}
 
 ];
