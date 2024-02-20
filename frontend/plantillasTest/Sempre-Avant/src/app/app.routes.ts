@@ -21,10 +21,12 @@ import { LoginComponent } from './views/login/login.component';
 import { SantJordiComponent } from './views/sant-jordi/sant-jordi.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
 import { ContactoCastComponent } from './views/contacto-cast/contacto-cast.component';
+import { BackofficeComponent } from './views/backoffice/backoffice.component';
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
     { path: '', component: HomeComponent},
+    /* { path: '/', component: HomeComponent}, */
     { path: 'home', component: HomeComponent},
     { path: 'home-cast', component: HomeCastComponent},
     { path: 'test', component: TestComponent},
@@ -46,6 +48,8 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'santjordi', component: SantJordiComponent},
     { path: 'contacto', component: ContactoComponent},
-    { path: 'contacto-cast', component: ContactoCastComponent}
+    { path: 'contacto-cast', component: ContactoCastComponent},
+    { path: 'admin', component: BackofficeComponent}
+
 ];
 
