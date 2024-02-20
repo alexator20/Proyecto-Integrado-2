@@ -19,6 +19,8 @@ import { ScoutersCastComponent } from './views/scouters-cast/scouters-cast.compo
 import { BadenpowellCastComponent } from './views/badenpowell-cast/badenpowell-cast.component';
 import { LoginComponent } from './views/login/login.component';
 import { SantJordiComponent } from './views/sant-jordi/sant-jordi.component';
+import { ContactoComponent } from './views/contacto/contacto.component';
+import { ContactoCastComponent } from './views/contacto-cast/contacto-cast.component';
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
@@ -42,6 +44,8 @@ export const routes: Routes = [
     { path: 'badenpowell', component: BadenPowellComponent},
     { path: 'badenpowell-cast', component: BadenpowellCastComponent},
     { path: 'login', component: LoginComponent},
-    { path: 'santjordi', component: SantJordiComponent}
+    { path: 'santjordi', component: SantJordiComponent},
+    { path: 'contacto', component: ContactoComponent},
+    { path: 'contacto-cast', component: ContactoCastComponent}
 ];
 
