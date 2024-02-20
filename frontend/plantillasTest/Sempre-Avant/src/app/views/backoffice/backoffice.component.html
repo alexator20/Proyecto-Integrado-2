@@ -1,4 +1,183 @@
 <main>
-    <div class="container" style="background-color: blue;">
-    
+    <div class="container-fluid" style="background-color: blue;">
+        <div class="row">
+            <div class="col-12 col-md-6" style="background-color: red;">
+                <div class="accordion accordion-flush p-3" id="accordion" style="width:100%">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingUsers">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-users" aria-expanded="false" aria-controls="flush-users">
+                                Usuarios
+                            </button>
+                        </h2>
+                        <div id="flush-users" class="accordion-collapse collapse" aria-labelledby="flush-headingUsers"
+                            data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div (click)="insertUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Insertar
+                                        </button>
+                                    </div>
+                                    <div (click)="updateUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                    <div (click)="deleteUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingGroups">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-groups" aria-expanded="false" aria-controls="flush-groups">
+                                Grupos
+                            </button>
+                        </h2>
+                        <div id="flush-groups" class="accordion-collapse collapse" aria-labelledby="flush-headingGroups"
+                            data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div (click)="insertUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Insertar
+                                        </button>
+                                    </div>
+                                    <div (click)="updateUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                    <div (click)="deleteUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingEvents">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-events" aria-expanded="false" aria-controls="flush-events">
+                                Eventos
+                            </button>
+                        </h2>
+                        <div id="flush-events" class="accordion-collapse collapse" aria-labelledby="flush-headingEvents"
+                            data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div (click)="insertUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Insertar
+                                        </button>
+                                    </div>
+                                    <div (click)="updateUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                    <div (click)="deleteUser()" class="col-4 d-flex justify-content-center boton">
+                                        <button class="btn collapsed" type="button">
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingParticipation">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-participation" aria-expanded="false"
+                                aria-controls="flush-participation">
+                                Participación
+                            </button>
+                        </h2>
+                        <div id="flush-participation" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingParticipation" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-grupoEv">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-grupoEvento-collapse" aria-expanded="false"
+                                            aria-controls="flush-grupoEvento-collapse">
+                                            Grupo/Evento
+                                        </button>
+                                    </h2>
+                                    <div id="flush-grupoEvento-collapse" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-grupoEv" data-bs-parent="#flush-participation">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div (click)="insertUser()" class="col-4 d-flex justify-content-center boton">
+                                                    <button class="btn collapsed" type="button">
+                                                        Insertar
+                                                    </button>
+                                                </div>
+                                                <div (click)="updateUser()" class="col-4 d-flex justify-content-center boton">
+                                                    <button class="btn collapsed" type="button">
+                                                        Actualizar
+                                                    </button>
+                                                </div>
+                                                <div (click)="deleteUser()" class="col-4 d-flex justify-content-center boton">
+                                                    <button class="btn collapsed" type="button">
+                                                        Eliminar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Nuevo elemento: Asistencia -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-asistencia">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-asistencia-collapse" aria-expanded="false"
+                                            aria-controls="flush-asistencia-collapse">
+                                            Asistencia
+                                        </button>
+                                    </h2>
+                                    <div id="flush-asistencia-collapse" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-asistencia" data-bs-parent="#flush-participation">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div (click)="insertUser()" class="col-4 d-flex justify-content-center boton">
+                                                    <button class="btn collapsed" type="button">
+                                                        Insertar
+                                                    </button>
+                                                </div>
+                                                <div (click)="updateUser()" class="col-4 d-flex justify-content-center boton">
+                                                    <button class="btn collapsed" type="button">
+                                                        Actualizar
+                                                    </button>
+                                                </div>
+                                                <div (click)="deleteUser()" class="col-4 d-flex justify-content-center boton">
+                                                    <button class="btn collapsed" type="button">
+                                                        Eliminar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin del nuevo elemento Asistencia -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" style="background-color: yellow;">
+                <p>
+                    Contenido del lado derecho
+                </p>
+            </div>
+        </div>
     </div>
+</main>
