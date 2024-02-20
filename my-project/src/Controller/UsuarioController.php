@@ -74,43 +74,39 @@ class UsuarioController extends AbstractController
     }
 
 
-    #[Route('/api_user', name: 'api_user', methods:['get','post'] )]
+    #[Route('/api_user', name: 'api_user', methods:['post'] )]
     public function oneuser(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
-        
+        $data = [];
+        $recibe=json_decode($request->getContent(), true);
         $products = $doctrine
             ->getRepository(Usuario::class)
-            ->findOneBy($request->get('name'));
-   
-        $data = [];
-        if (password_verify($request->request->get('password'), $products->getPassword())) {
+            ->findOneBy($recibe['name']);
+    
+
         if($products->getNombre()!=null){
-            foreach ($products as $product) {
-                $data[] = [
-                    'id' => $product->getId(),
-                    'name' => $product->getNombre(),
-                    'edad' => $product->getEdad(),
-                    'rol' => $product->getRol(),
-                    'grupoid' => $product->getGrupoPerteneciente()->getId(),
-                    'gruponame' => $product->getGrupoPerteneciente()->getNombre(),
-                    'gruposeccion' => $product->getGrupoPerteneciente()->getSeccion(),
-                ];
-             }
+        if (password_verify($recibe['pass'], $products->getPassword())) {
         
-             return $this->json($data);
-        }else{
-                $data[] = [
-                    'exception' => "no se encontro el usuario",
-                ];
-        
-             return $this->json($data);
-        }}else{
             $data[] = [
-                'exception' => "no es la contraseña",
+                'id' => $products->getId(),
+                'name' => $products->getNombre(),
+                'edad' => $products->getEdad(),
+                'rol' => $products->getRol(),
+                'grupoid' => $products->getGrupoPerteneciente()->getId(),
+                'gruponame' => $products->getGrupoPerteneciente()->getNombre(),
+                'gruposeccion' => $products->getGrupoPerteneciente()->getSeccion(),
             ];
-            return $this->json($data);
+         
+    
+         return $this->json($data);
+            
+        }else{
+            return new JsonResponse(['message'=>'este no es su contraseña'], 201);
+        }}else{
+            return new JsonResponse(['message'=>'este usuario no existe'], 200);
         }
     }
+
 
 //PRUEBAAAAAAAAAAAAAAAAAAS
     #[Route('/prueba', name: 'app_prueba')]

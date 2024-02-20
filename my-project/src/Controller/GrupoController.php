@@ -95,7 +95,7 @@ class GrupoController extends AbstractController
         ]);
     }
 
-
+    //Api que envia datos de la tabla Grupo
     #[Route('/grupo_api', name: 'grupo_api', methods:['get'] )]
     public function indice(ManagerRegistry $doctrine): JsonResponse
     {

@@ -18,7 +18,7 @@ class ReleventousuarioController extends AbstractController
             'controller_name' => 'ReleventousuarioController',
         ]);
     }
-
+    //Api que envia datos de la tabla relacionada
     #[Route('/releventouser_api', name: 'releventouser_api', methods:['get'] )]
     public function indice(ManagerRegistry $doctrine): JsonResponse
     {
