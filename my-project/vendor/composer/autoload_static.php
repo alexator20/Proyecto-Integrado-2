@@ -74,6 +74,10 @@ class ComposerStaticInitaff1e4d75476bf2610d81763f440fbf8
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
         ),
+        'N' => 
+        array (
+            'Nelmio\\CorsBundle\\' => 18,
+        ),
         'D' => 
         array (
             'Doctrine\\SqlFormatter\\' => 22,
@@ -286,6 +290,10 @@ class ComposerStaticInitaff1e4d75476bf2610d81763f440fbf8
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Nelmio\\CorsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/cors-bundle',
         ),
         'Doctrine\\SqlFormatter\\' => 
         array (

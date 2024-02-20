@@ -9,6 +9,6 @@ export class LoginService {
   constructor(public http: HttpClient) { }
 
   enviarDatos(formData: any) {
-    return this.http.post('http://tu-api-symfony.com/ruta', formData);
+    return this.http.post('http://localhost:8000/testForm', formData);
   }
 }
