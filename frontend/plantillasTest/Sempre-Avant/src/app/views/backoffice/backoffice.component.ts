@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
+import { TestearFormuComponent } from '../../components/testear-formu/testear-formu.component';
 
 
 @Component({
   selector: 'app-backoffice',
   standalone: true,
-  imports: [],
+  imports: [LoginComponent,TestearFormuComponent],
   templateUrl: './backoffice.component.html',
   styleUrl: './backoffice.component.css'
 })
 export class BackofficeComponent {
+
+  public condition = 1;
 
   public insertUser(): void {
     // Logic to insert a user goes here
@@ -27,5 +31,9 @@ export class BackofficeComponent {
     alert('eliminar')
     // You should write the logic to insert a user in your application.
     // This could involve making HTTP requests, interacting with a database, etc.
+  }
+
+  public selectForm(param:number): void {
+    this.condition = param;
   }
 }
