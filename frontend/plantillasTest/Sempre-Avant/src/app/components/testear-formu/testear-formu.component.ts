@@ -18,7 +18,7 @@ export class TestearFormuComponent {
 
   constructor(private formularioService: LoginService) { }
 
-  onSubmit() {
+ /* onSubmit() {
     this.formularioService.enviarDatos(this.reactiveForm.value)
       .pipe(
         tap({
@@ -32,6 +32,11 @@ export class TestearFormuComponent {
         })
       )
       .subscribe();
+  }*/
+  public onSubmit(): void {
+   
+      
+    
   }
 
 }

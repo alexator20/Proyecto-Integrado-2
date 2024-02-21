@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 @Component({
   selector: 'app-header',
@@ -10,5 +10,9 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) { }
 
-  public rol: string="";
+  @Input() rol: string="";
+
+  ngOnInit() {
+    console.log(this.rol);
+  }
 }
