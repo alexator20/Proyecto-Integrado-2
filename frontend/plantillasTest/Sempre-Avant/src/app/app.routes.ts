@@ -25,6 +25,8 @@ import { BackofficeComponent } from './views/backoffice/backoffice.component';
 import { SantJordiCasComponent } from './views/sant-jordi-cas/sant-jordi-cas.component';
 import { FotosComponent } from './views/fotos/fotos.component';
 import { OrganizacionComponent } from './views/organizacion/organizacion.component';
+import { VideosComponent } from './views/videos/videos.component';
+import { AudiosComponent } from './views/audios/audios.component';
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
@@ -54,6 +56,8 @@ export const routes: Routes = [
     { path: 'contacto-cast', component: ContactoCastComponent },
     { path: 'admin', component: BackofficeComponent },
     { path: 'fotos', component: FotosComponent },
+    { path: 'videos', component: VideosComponent },
+    { path: 'audios', component: AudiosComponent },
     { path: 'organizacion', component: OrganizacionComponent },
 
 ];
