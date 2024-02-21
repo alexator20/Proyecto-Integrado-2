@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { TestearFormuComponent } from '../../components/testear-formu/testear-formu.component';
+import { InsertUserComponent } from '../../components/insert-user/insert-user.component';
 
 
 @Component({
   selector: 'app-backoffice',
   standalone: true,
-  imports: [LoginComponent,TestearFormuComponent],
+  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent],
   templateUrl: './backoffice.component.html',
   styleUrl: './backoffice.component.css'
 })

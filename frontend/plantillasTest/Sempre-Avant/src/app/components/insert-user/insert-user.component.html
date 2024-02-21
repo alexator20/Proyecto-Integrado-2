@@ -1,1 +1,79 @@
-<p>insert-user works!</p>
+<aside>
+
+    <div class="row justify-content-center" style="background-color: lightgray;">
+        <div class="col-12 col-md-7">
+            <div class="container-fluid py-5">
+                <div class="container" style="background-color: white; border: 1px solid white; border-radius: 7px;">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-12 d-flex justify-content-center">
+                                <img class="icons" src="../../../assets/imgs/loginnegro.png" alt="personita login">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                
+                                <!-- form -->
+                                
+                                <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+                                    <div class="container col-12 col-md-7 justify-content-center">
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="grupo_perteneciente_id" class="form-label">Grupo Perteneciente ID</label>
+                                               <input style="border: 2px solid #904cb4 !important;" id="grupo_perteneciente_id" formControlName="grupo_perteneciente_id" type="text"
+                                                    class="form-control" id="grupo_perteneciente_id" aria-describedby="grupo_perteneciente_idHelp">
+                                                <div id="grupo_perteneciente_idHelp" class="form-text">ID del grupo al que pertenece el usuario.
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="nombre" class="form-label">Nombre</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="nombre" formControlName="nombre" type="text"
+                                                    class="form-control" id="nombre">
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="edad" class="form-label">Edad</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="edad" formControlName="edad" type="number"
+                                                    class="form-control" id="edad">
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="rol" class="form-label">Rol</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="rol" formControlName="rol" type="text"
+                                                    class="form-control" id="rol">
+                                            </div>
+                                        </div>
+    
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="password" formControlName="password" type="password"
+                                                    class="form-control" id="password">
+                                            </div>
+                                        </div>
+    
+                                        <div class="row">
+                                            <div class="mb-3 col-9 col-md-3">
+                                                <button type="submit" class="btn">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- form -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aside>
