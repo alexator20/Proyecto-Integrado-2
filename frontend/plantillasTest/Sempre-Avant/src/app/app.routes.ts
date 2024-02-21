@@ -23,34 +23,36 @@ import { ContactoComponent } from './views/contacto/contacto.component';
 import { ContactoCastComponent } from './views/contacto-cast/contacto-cast.component';
 import { BackofficeComponent } from './views/backoffice/backoffice.component';
 import { SantJordiCasComponent } from './views/sant-jordi-cas/sant-jordi-cas.component';
+import { FotosComponent } from './views/fotos/fotos.component';
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
-    { path: '', component: HomeComponent},
-    { path: 'home', component: HomeComponent},
-    { path: 'home-cast', component: HomeCastComponent},
-    { path: 'test', component: TestComponent},
-    { path: 'castores', component: CastoresComponent},
-    { path: 'castores-cast', component: CastoresCastComponent},
-    { path: 'manada', component: ManadaComponent},
-    { path: 'manada-cast', component: ManadaCastComponent},
-    { path: 'tropa', component: TropaComponent},
-    { path: 'tropa-cast', component: TropaCastComponent},
-    { path: 'esculta', component: EscultaComponent},
-    { path: 'esculta-cast', component: EscultaCastComponent},
-    { path: 'clan', component: ClanComponent},
-    { path: 'clan-cast', component: ClanCastComponent},
-    { path: 'scouters', component: ScoutersComponent},
-    { path: 'cronologia', component: CronologiaComponent},
-    { path: 'scouters-cast', component: ScoutersCastComponent},
-    { path: 'badenpowell', component: BadenPowellComponent},
-    { path: 'badenpowell-cast', component: BadenpowellCastComponent},
-    { path: 'login', component: LoginComponent},
-    { path: 'santjordi', component: SantJordiComponent},
-    { path: 'santjordi-cast', component: SantJordiCasComponent},
-    { path: 'contacto', component: ContactoComponent},
-    { path: 'contacto-cast', component: ContactoCastComponent},
-    { path: 'admin', component: BackofficeComponent}
+    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'home-cast', component: HomeCastComponent },
+    { path: 'test', component: TestComponent },
+    { path: 'castores', component: CastoresComponent },
+    { path: 'castores-cast', component: CastoresCastComponent },
+    { path: 'manada', component: ManadaComponent },
+    { path: 'manada-cast', component: ManadaCastComponent },
+    { path: 'tropa', component: TropaComponent },
+    { path: 'tropa-cast', component: TropaCastComponent },
+    { path: 'esculta', component: EscultaComponent },
+    { path: 'esculta-cast', component: EscultaCastComponent },
+    { path: 'clan', component: ClanComponent },
+    { path: 'clan-cast', component: ClanCastComponent },
+    { path: 'scouters', component: ScoutersComponent },
+    { path: 'cronologia', component: CronologiaComponent },
+    { path: 'scouters-cast', component: ScoutersCastComponent },
+    { path: 'badenpowell', component: BadenPowellComponent },
+    { path: 'badenpowell-cast', component: BadenpowellCastComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'santjordi', component: SantJordiComponent },
+    { path: 'santjordi-cast', component: SantJordiCasComponent },
+    { path: 'contacto', component: ContactoComponent },
+    { path: 'contacto-cast', component: ContactoCastComponent },
+    { path: 'admin', component: BackofficeComponent },
+    { path: 'fotos', component: FotosComponent }
 
 ];
 
