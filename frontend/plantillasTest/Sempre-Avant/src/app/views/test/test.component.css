@@ -1,0 +1,17 @@
+.carousel-control-prev{
+    background-color: black;
+    width: 8vh;
+}
+
+.carousel-control-next{
+    background-color: black;
+    width: 8vh;
+}
+
+img {
+    transition: transform 0.3s ease;
+  }
+
+img:hover {
+    transform: scale(1.02); /* Aumenta el tamaño al 110% */
+}
