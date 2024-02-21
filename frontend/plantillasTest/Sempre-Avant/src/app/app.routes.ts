@@ -22,6 +22,7 @@ import { SantJordiComponent } from './views/sant-jordi/sant-jordi.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
 import { ContactoCastComponent } from './views/contacto-cast/contacto-cast.component';
 import { BackofficeComponent } from './views/backoffice/backoffice.component';
+import { SantJordiCasComponent } from './views/sant-jordi-cas/sant-jordi-cas.component';
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
@@ -46,6 +47,7 @@ export const routes: Routes = [
     { path: 'badenpowell-cast', component: BadenpowellCastComponent},
     { path: 'login', component: LoginComponent},
     { path: 'santjordi', component: SantJordiComponent},
+    { path: 'santjordi-cast', component: SantJordiCasComponent},
     { path: 'contacto', component: ContactoComponent},
     { path: 'contacto-cast', component: ContactoCastComponent},
     { path: 'admin', component: BackofficeComponent}
