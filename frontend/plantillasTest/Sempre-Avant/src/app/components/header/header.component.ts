@@ -11,4 +11,6 @@ export class HeaderComponent {
   constructor(private router: Router) { }
 
   public rol: string="";
+  public banderita:number = 1;
+  
 }
