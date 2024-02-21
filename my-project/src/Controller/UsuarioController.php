@@ -81,7 +81,7 @@ class UsuarioController extends AbstractController
         $recibe=json_decode($request->getContent(), true);
         $products = $doctrine
             ->getRepository(Usuario::class)
-            ->findOneBy($recibe['name']);
+            ->findOneBy(array('nombre'=>$recibe['name']));
     
 
         if($products->getNombre()!=null){
@@ -115,12 +115,12 @@ class UsuarioController extends AbstractController
         $entityManager = $doctrine->getManager();
         $project = new Usuario();
 
-        $project->setNombre("davit");
+        $project->setNombre("emilio");
         $password = "prueba";
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $product = $entityManager->getRepository(grupo::class)->find(4);
         $project->setPassword($hashedPassword);
-        $project->setEdad(21);
+        $project->setEdad(28);
         $project->setRol("admin");
         $project->setGrupoPerteneciente($product);
         $entityManager->persist($project);
