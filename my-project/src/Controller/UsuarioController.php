@@ -12,6 +12,7 @@ use App\Entity\Usuario;
 use App\Entity\Grupo;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpParser\Node\Stmt\TryCatch;
 
 class UsuarioController extends AbstractController
 {
@@ -54,34 +55,40 @@ class UsuarioController extends AbstractController
     }
 
     #[Route('/insertUser', name: 'app_insert' )]
-    public function add(Request $request): Response
-    {
-        $recibe=json_decode($request->getContent(), true);
+    public function add(Request $request): JsonResponse
+{
+    $recibe = json_decode($request->getContent(), true);
 
-        $nombre = $recibe['nombre'];
-        $grupo = $recibe['grupo_perteneciente_id'];
-        $edad = $recibe['edad'];
-        $rol = $recibe['rol'];
-        $pass = $recibe['password'];
-        
+    $nombre = $recibe['nombre'];
+    $grupoId = $recibe['grupo_perteneciente_id'];
+    $edad = $recibe['edad'];
+    $rol = $recibe['rol'];
+    $pass = $recibe['password'];
 
-        // Obtener el objeto Emp correspondiente al ID del representante
-       
+    try {
+        // Obtener el objeto Grupo correspondiente al ID del grupo
+        $grupo = $this->em->getRepository(Grupo::class)->find($grupoId);
+
+        if (!$grupo) {
+            throw new \Exception('El grupo especificado no existe.');
+        }
+
         $nuevo = new Usuario();
-        $grupo = $this->em->getRepository(Grupo::class)->find($grupo);
-        // la id es autoincremental, por eso no es necesario establecerla.
         $nuevo->setNombre($nombre);
         $nuevo->setGrupoPerteneciente($grupo);
         $nuevo->setEdad($edad);
         $nuevo->setRol($rol);
         $nuevo->setPassword($pass);
 
-        //persistencia
+        // Persistencia
         $this->em->persist($nuevo);
         $this->em->flush();
 
-        return $this->redirectToRoute('app_cliente');
+        return new JsonResponse(['message' => 'Usuario creado correctamente.'], JsonResponse::HTTP_CREATED);
+    } catch (\Exception $e) {
+        return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
     }
+}
 
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
     #[Route('/api_user', name: 'api_user', methods:['post'] )]
