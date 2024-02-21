@@ -15,7 +15,7 @@ class RelGrupoEvento
 
     #[ORM\ManyToOne(inversedBy: 'relGrupoEventos')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?grupo $grupo = null;
+    private ?Grupo $grupo = null;
 
     #[ORM\ManyToOne(inversedBy: 'relGrupoEventos')]
     #[ORM\JoinColumn(nullable: false)]
@@ -29,12 +29,12 @@ class RelGrupoEvento
         return $this->id;
     }
 
-    public function getGrupo(): ?grupo
+    public function getGrupo(): ?Grupo
     {
         return $this->grupo;
     }
 
-    public function setGrupo(?grupo $grupo): static
+    public function setGrupo(?Grupo $grupo): static
     {
         $this->grupo = $grupo;
 
