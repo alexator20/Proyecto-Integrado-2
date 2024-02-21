@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 import { LoginService} from '../../services/login.service';
 import { tap, catchError } from 'rxjs/operators';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../interfaces/servi.interface';
 
 @Component({
   selector: 'app-insert-user',
@@ -17,13 +19,22 @@ export class InsertUserComponent {
     nombre: new FormControl(''),
     edad: new FormControl(''),
     rol: new FormControl(''),
-    password: new FormControl(''),
+    password: new FormControl('')
   });
 
-  constructor(private formularioService: LoginService) { }
+  constructor(private formularioService: UsersService) { }
+  
 
   onSubmit() {
-    this.formularioService.enviarDatos(this.reactiveForm.value)
+    const userData: User = {
+      grupo_perteneciente_id: this.reactiveForm.value.grupo_perteneciente_id !== undefined ? this.reactiveForm.value.grupo_perteneciente_id : null,
+      nombre: this.reactiveForm.value.nombre !== undefined ? this.reactiveForm.value.nombre : null,
+      edad: this.reactiveForm.value.edad !== undefined ? this.reactiveForm.value.edad : null,
+      rol: this.reactiveForm.value.rol !== undefined ? this.reactiveForm.value.rol : null,
+      password: this.reactiveForm.value.password !== undefined ? this.reactiveForm.value.password : null
+    };
+
+    this.formularioService.enviarDatosInsert(userData)
       .pipe(
         tap({
           next: response => {

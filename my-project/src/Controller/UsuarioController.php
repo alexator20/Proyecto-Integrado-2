@@ -9,11 +9,18 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Usuario;
-use App\Entity\grupo;
+use App\Entity\Grupo;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 class UsuarioController extends AbstractController
 {
+    private $em;
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+
     #[Route('/usuario', name: 'app_usuario')]
     public function index(): Response
     {
@@ -46,31 +53,34 @@ class UsuarioController extends AbstractController
         return $this->json($data);
     }
 
-    #[Route('/insert', name: 'app_insert', methods:['post'] )]
-    public function create(ManagerRegistry $doctrine, Request $request): JsonResponse
+    #[Route('/insertUser', name: 'app_insert' )]
+    public function add(Request $request): Response
     {
-        $entityManager = $doctrine->getManager();
-        $project = new Usuario();
+        $recibe=json_decode($request->getContent(), true);
 
-        $project->setNombre($request->request->get('name'));
-        $password = $request->request->get('password');
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $nombre = $recibe['nombre'];
+        $grupo = $recibe['grupo_perteneciente_id'];
+        $edad = $recibe['edad'];
+        $rol = $recibe['rol'];
+        $pass = $recibe['password'];
         
-        $project->setPassword($hashedPassword);
-        $project->setEdad($request->request->get('edad'));
-        $project->setGrupoPerteneciente($request->request->get('grupo'));
-        $entityManager->persist($project);
-        $entityManager->flush();
-   
-        $data =  [
-            'id' => $project->getId(),
-            'name' => $project->getNombre(),
-            'edad' => $project->getEdad(),
-            'grupo' => $project->getGrupoPerteneciente()->getNombre(),
-            'seccion' => $project->getGrupoPerteneciente()->getSeccion(),
-        ];
-           
-        return $this->json($data);
+
+        // Obtener el objeto Emp correspondiente al ID del representante
+       
+        $nuevo = new Usuario();
+        $grupo = $this->em->getRepository(Grupo::class)->find($grupo);
+        // la id es autoincremental, por eso no es necesario establecerla.
+        $nuevo->setNombre($nombre);
+        $nuevo->setGrupoPerteneciente($grupo);
+        $nuevo->setEdad($edad);
+        $nuevo->setRol($rol);
+        $nuevo->setPassword($pass);
+
+        //persistencia
+        $this->em->persist($nuevo);
+        $this->em->flush();
+
+        return $this->redirectToRoute('app_cliente');
     }
 
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
