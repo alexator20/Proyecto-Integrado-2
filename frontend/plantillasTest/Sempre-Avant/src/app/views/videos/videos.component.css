@@ -4,5 +4,9 @@
 }
 
 .card-body{
- min-height: 30vh;
+ min-height: 20vh;
+}
+
+.carta{
+    padding-bottom: 3%;
 }
