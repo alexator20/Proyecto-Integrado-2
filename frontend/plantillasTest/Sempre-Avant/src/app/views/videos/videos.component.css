@@ -1,0 +1,8 @@
+.card{
+    border-width: 3px;
+    border-color: rgb(148, 107, 148);
+}
+
+.card-body{
+ min-height: 30vh;
+}
