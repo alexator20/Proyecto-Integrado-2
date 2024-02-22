@@ -1,68 +1,37 @@
-<!-- <div class="container">
-    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-</div> -->
-
 <div class="container-fluid">
     <div class="card text-bg-light">
         <div class="card-body">
             <h1 class="titCard">Galería de videos</h1>
+            <!--  -->
             <div class="row">
+                @for (item of videos; track item) {
+                <!-- <p> {{ item.src }} </p>
+                <p> {{ item.surname }} </p> -->
+
                 <div class="col-md-6">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5vaPMjUtlmk?si=L_-dDDq1_8pb4a0F"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    <h4>Video de youtube</h4>
-                </div>
-                <div class="card text-bg-primary mb-3 " style="max-width: 18rem;">
-                    <div class="card-header"><iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/5vaPMjUtlmk?si=L_-dDDq1_8pb4a0F"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    <div class="card">
+                        <iframe [src]=item.src width="600"
+                            height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
                             allowfullscreen></iframe>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.text}}</h5>
+                            <p class="card-text">mierda</p>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Primary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                </div>
+                }
+                <div class="col-md-6">
+                    <div class="card">
+                        <iframe src="https://player.vimeo.com/video/192666298?h=08a326b4b0" width="600" height="360"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        <div class="card-body">
+                            <h5 class="card-title">MannequinChallenge</h5>
+                            <p class="card-text">Hecho por la tropa, la esculta y el clan en la excursión a Santo
+                                Espiritu, en noviembre de 2016.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/5vaPMjUtlmk?si=L_-dDDq1_8pb4a0F"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card">
-                <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/5vaPMjUtlmk?si=L_-dDDq1_8pb4a0F"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
