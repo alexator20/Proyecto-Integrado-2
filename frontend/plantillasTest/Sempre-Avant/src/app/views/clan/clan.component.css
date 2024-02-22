@@ -1,10 +1,4 @@
-.custom-container {
-  background: #ff313190;
-  /* Ajusta este color al color de fondo deseado */
-  border-radius: 15px;
-  /* Ajusta el radio del borde si es necesario */
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  /* Sombra de caja opcional */
+img {
+  height: 150px;
+  width: 100px;
 }

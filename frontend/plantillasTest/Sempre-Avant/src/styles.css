@@ -1,44 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-.nav-link{
-    color:white
+.nav-link {
+  color: white
 }
 
-header{
-    background-color: #904cb4 !important;
+header {
+  background-color: #904cb4 !important;
 }
 
-h1{
-    text-align: center;
-    padding: 3%;
+h1 {
+  text-align: center;
+  padding: 3%;
 }
 
-.colaboracion{
-    text-align: center;
+.colaboracion {
+  text-align: center;
 }
 
-#footer{
-    background-color: #904cb4 !important;
+#footer {
+  background-color: #904cb4 !important;
 }
-  .custom-header {
-    text-align: center;
-    font-size: 1.5em;
-    /* Ajusta el tamaño de fuente si es necesario */
-    font-weight: bold;
-    /* Estilo de fuente en negrita */
-    margin-bottom: 15px;
-    /* Margen inferior para el encabezado */
-  }
 
-  .custom-section {
-    margin-bottom: 15px;
-    /* Margen inferior para cada sección */
-  }
+.custom-container {
+  background: #F0EBF8;
+  /* Un azul claro suave, que recuerda al cielo o al agua, adecuado para temas relacionados con la naturaleza */
+  border-radius: 10px;
+  /* Bordes ligeramente redondeados para suavizar el diseño */
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Una sombra sutil para dar profundidad */
+  text-align: center;
+  color: #333;
+  /* Un color de texto más oscuro para mejorar el contraste y la legibilidad */
+}
 
-  .character-card {
-    text-align: center;
-    /* Centra el texto de la tarjeta */
-  }
+.custom-container2 {
+  background: #F0EBF8;
+  /* Un azul claro suave, que recuerda al cielo o al agua, adecuado para temas relacionados con la naturaleza */
+  border-radius: 10px;
+  /* Bordes ligeramente redondeados para suavizar el diseño */
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Una sombra sutil para dar profundidad */
+  color: #333;
+  /* Un color de texto más oscuro para mejorar el contraste y la legibilidad */
+}
+
+.custom-header {
+  font-size: 1.25em;
+  /* Aumentar el tamaño para las cabeceras dentro del contenedor */
+  margin-bottom: 15px;
+  /* Espaciado para separar las cabeceras del texto que sigue */
+  color: #925DBB;
+  /* Un azul más oscuro para las cabeceras para añadir un punto focal */
+}
+
+.character-card {
+  background: #ffffff; /* Fondo blanco para las tarjetas de personajes para destacarlos */
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px; /* Bordes ligeramente redondeados para las tarjetas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
+}
+
+.custom-section {
+  margin-bottom: 15px;
+  /* Margen inferior para cada sección */
+}
+
+.character-card {
+  text-align: center;
+  /* Centra el texto de la tarjeta */
+}
+
+.carousel-control-prev{
+  background-color: black;
+  width: 7vh;
+}
+
+.carousel-control-next{
+  background-color: black;
+  width: 7vh;
+}
