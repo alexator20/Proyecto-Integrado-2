@@ -26,7 +26,7 @@ class Usuario
 
     #[ORM\ManyToOne(inversedBy: 'usuarios')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?grupo $grupo_perteneciente = null;
+    private ?Grupo $grupo_perteneciente = null;
 
     #[ORM\OneToMany(targetEntity: RelUsuarioEvento::class, mappedBy: 'usuario')]
     private Collection $relUsuarioEventos;
@@ -80,12 +80,12 @@ class Usuario
         return $this;
     }
 
-    public function getGrupoPerteneciente(): ?grupo
+    public function getGrupoPerteneciente(): ?Grupo
     {
         return $this->grupo_perteneciente;
     }
 
-    public function setGrupoPerteneciente(?grupo $grupo_perteneciente): static
+    public function setGrupoPerteneciente(?Grupo $grupo_perteneciente): static
     {
         $this->grupo_perteneciente = $grupo_perteneciente;
 

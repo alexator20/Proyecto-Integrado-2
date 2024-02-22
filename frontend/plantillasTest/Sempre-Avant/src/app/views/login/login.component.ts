@@ -17,7 +17,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 
 export class LoginComponent {
   reactiveForm = new FormGroup({
-    nombre: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl('')
   });
 
@@ -25,7 +25,7 @@ export class LoginComponent {
 
   onSubmit() {
     const userData: Login = {
-      nombre: this.reactiveForm.value.nombre !== undefined ? this.reactiveForm.value.nombre : null,
+      nombre: this.reactiveForm.value.username !== undefined ? this.reactiveForm.value.username : null,
       password: this.reactiveForm.value.password !== undefined ? this.reactiveForm.value.password : null
     };
   

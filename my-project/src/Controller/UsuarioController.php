@@ -121,11 +121,11 @@ class UsuarioController extends AbstractController
         $recibe = json_decode($request->getContent(), true);
         $products = $doctrine
             ->getRepository(Usuario::class)
-            ->findOneBy(array('nombre' => $recibe['name']));
+            ->findOneBy(array('nombre' => $recibe['nombre']));
 
 
         if ($products->getNombre() != null) {
-            if (password_verify($recibe['pass'], $products->getPassword())) {
+            if (password_verify($recibe['password'], $products->getPassword())) {
 
                 $data[] = [
                     'id' => $products->getId(),
@@ -141,7 +141,7 @@ class UsuarioController extends AbstractController
                 return $this->json($data);
 
             } else {
-                return new JsonResponse(['message' => 'este no es su contraseña'], 201);
+                return new JsonResponse(['message' => 'este no es su contraseña'], 200);
             }
         } else {
             return new JsonResponse(['message' => 'este usuario no existe'], 200);
