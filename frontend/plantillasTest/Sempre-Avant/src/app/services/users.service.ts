@@ -13,4 +13,8 @@ export class UsersService {
   enviarDatosInsert(formData: User) {
     return this.http.post('http://localhost:8000/insertUser', formData);
   }
+
+  recibirDatosUsers(){
+    return this.http.get<User[]>('http://localhost:8000/viewUsers')
+  }
 }

@@ -102,7 +102,7 @@ class UsuarioController extends AbstractController
             $usersArray[] = [
                 'id' => $user->getId(),
                 'nombre' => $user->getNombre(),
-                'grupo_perteneciente_id' => $user->getGrupoPerteneciente(),
+                'grupo_perteneciente_id' => $user->getGrupoPerteneciente()->getNombre(),
                 'edad' => $user->getEdad(),
                 'rol' => $user->getRol(),
                 'password' => $user->getPassword()
@@ -125,7 +125,7 @@ class UsuarioController extends AbstractController
     }
 */
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
-    #[Route('/apiUser', name: 'api_user', methods: ['post'])]
+    #[Route('/apiUser', name: 'api_user', methods: ['get'])]
     public function oneuser(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
         $data = [];

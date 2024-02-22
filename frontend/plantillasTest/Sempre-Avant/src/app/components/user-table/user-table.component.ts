@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../interfaces/servi.interface';
 
 @Component({
   selector: 'app-user-table',
@@ -12,23 +14,39 @@ import { tap } from 'rxjs/operators';
 export class UserTableComponent {
 
   
-  users: any[] = [];
+  public users: User[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private formularioService: UsersService) { }
 
   ngOnInit(): void {
     this.fetchUsers();
   }
 
+  
+
   fetchUsers() {
-    this.http.get<any[]>('http://localhost:8000/api_user').pipe(
-      tap((data) => {
-        this.users = data;
-      })
-    ).subscribe({
-      error: (error) => {
-        console.error('Error fetching users:', error);
-      }
-    });
+    alert('caca');
+    /*
+    this.formularioService.recibirDatosUsers()
+      .pipe(
+        tap({
+          
+          next: response => {
+            alert('entra');
+            console.log('Respuesta del servidor:', response);
+            // Puedes hacer algo con la respuesta si lo necesitas
+          },
+          error: error => {
+            alert('no entra');
+            console.error('Error al enviar los datos:', error);
+          }
+        })
+      )
+      .subscribe();
+      */
+     this.formularioService.recibirDatosUsers().subscribe(response => {
+      console.log(response);
+      this.users = response;
+     })
   }
 }

@@ -1,20 +1,30 @@
+@if (users.length > 0) {
 <table class="table">
     <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <!-- Agrega más columnas según los datos que devuelva tu API -->
-      </tr>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Grupo id</th>
+            <!-- Agrega más columnas según los datos que devuelva tu API -->
+        </tr>
     </thead>
     <tbody>
+
         @for (item of users; track item) {
-            <tr>
-                <td>{{ item.nombre }}</td>
-            </tr>
-            {{ item.name }}
-          }
-        
-        <!-- Agrega más celdas según los datos que devuelva tu API -->
+        <tr>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.edad }}</td>
+            <td>{{ item.rol }}</td>
+            <td>{{ item.grupo_perteneciente_id }}</td>
+        </tr>
+        }
     </tbody>
-  </table>
-  
+</table>
+}
+@else {
+<h2> Los datos se están cargando y esto puede tomar un buen rato </h2>
+}
+
+
+<!-- Agrega más celdas según los datos que devuelva tu API -->

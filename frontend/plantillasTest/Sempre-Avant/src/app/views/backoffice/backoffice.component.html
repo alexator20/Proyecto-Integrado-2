@@ -30,7 +30,7 @@
                                             Eliminar
                                         </button>
                                     </div>
-                                    <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(3)" class="col-3 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Eliminar
                                         </button>
@@ -207,6 +207,9 @@
                     @case (2) {
                       <app-testear-formu></app-testear-formu>
                     }
+                    @case (3) {
+                        <app-user-table></app-user-table>
+                      }
                     @default {
                       Default case.
                     }
