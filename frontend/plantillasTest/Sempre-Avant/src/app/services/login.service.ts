@@ -11,6 +11,6 @@ export class LoginService {
   constructor(public http: HttpClient) { }
 
   enviarDatos(formData: Login) {
-    return this.http.post('http://localhost:8000/api_user', formData);
+    return this.http.post('http://localhost:8000/apiUser', formData);
   }
 }

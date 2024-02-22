@@ -7,6 +7,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 
 
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -29,6 +30,7 @@ export class LoginComponent {
       password: this.reactiveForm.value.password !== undefined ? this.reactiveForm.value.password : null
     };
   
+    
     this.formularioService.enviarDatos(userData)
       .pipe(
         tap({
@@ -39,6 +41,7 @@ export class LoginComponent {
             this.rol=response[0].rol;
             console.log(this.rol);
             localStorage.setItem('rol',this.rol);
+            window.location.reload();
            }
           },
           error: error => {
@@ -47,6 +50,12 @@ export class LoginComponent {
         })
       )
       .subscribe();
+      
+     /*
+      this.formularioService.enviarDatos(userData).subscribe(response => {
+        console.log(response);
+      });
+*/
   }
 
 

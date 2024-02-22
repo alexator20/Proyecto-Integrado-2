@@ -112,17 +112,18 @@ class UsuarioController extends AbstractController
         // Devolver los datos como una respuesta JSON
         return new JsonResponse($usersArray);
     }
+    //la funcion listUsers esta repertida
+/*
+    #[Route('/viewUsers', name: 'app_cliente')]
+    public function listUsers(Request $request): Response
+    {
+        $clienteRepository = $this->em->getRepository(Usuario::class)->findAll();
 
-#[Route('/viewUsers', name: 'app_cliente')]
-public function listUsers(Request $request): Response
-{
-    $clienteRepository = $this->em->getRepository(Usuario::class)->findAll();
-
-    return $this->render('client/index.html', [
-        'resultados' => $clienteRepository
-    ]);
-}
-
+        return $this->render('client/index.html', [
+            'resultados' => $clienteRepository
+        ]);
+    }
+*/
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
     #[Route('/apiUser', name: 'api_user', methods: ['post'])]
     public function oneuser(ManagerRegistry $doctrine, Request $request): JsonResponse

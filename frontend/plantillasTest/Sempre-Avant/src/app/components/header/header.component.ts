@@ -8,12 +8,18 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
+  
   constructor(private router: Router) { }
 
   public rol:string | null=localStorage.getItem('rol');
-  
+
   ngOnInit() {
     console.log(this.rol);
   }
  
+  public logout():void {
+    localStorage.setItem('rol',"");
+    window.location.reload();
+  } 
 }
