@@ -114,7 +114,7 @@ class UsuarioController extends AbstractController
     }
 
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
-    #[Route('/api_user', name: 'api_user', methods: ['post'])]
+    #[Route('/apiUser', name: 'api_user', methods: ['post'])]
     public function oneuser(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
         $data = [];
