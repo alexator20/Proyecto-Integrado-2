@@ -20,7 +20,7 @@ export class LoginComponent {
     username: new FormControl(''),
     password: new FormControl('')
   });
-
+  public rol:string="";
   constructor(public formularioService: LoginService) { }
 
   onSubmit() {
@@ -35,6 +35,11 @@ export class LoginComponent {
           next: response => {
             console.log('Respuesta del servidor:', response);
             // Puedes hacer algo con la respuesta si lo necesitas
+           if(Array.isArray(response) && response.length>0){
+            this.rol=response[0].rol;
+            console.log(this.rol);
+            localStorage.setItem('rol',this.rol);
+           }
           },
           error: error => {
             console.error('Error al enviar los datos:', error);

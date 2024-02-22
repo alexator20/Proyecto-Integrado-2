@@ -10,9 +10,10 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) { }
 
-  @Input() rol: string="";
-
+  public rol:string | null=localStorage.getItem('rol');
+  
   ngOnInit() {
     console.log(this.rol);
   }
+ 
 }
