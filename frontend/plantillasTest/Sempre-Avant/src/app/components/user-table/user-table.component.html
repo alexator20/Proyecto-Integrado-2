@@ -1,4 +1,4 @@
-@if (users.length > 0) {
+@if (users) {
 <table class="table">
     <thead>
         <tr>
@@ -21,6 +21,11 @@
         }
     </tbody>
 </table>
+<div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+  </div>
 }
 @else {
 <h2> Los datos se están cargando y esto puede tomar un buen rato </h2>

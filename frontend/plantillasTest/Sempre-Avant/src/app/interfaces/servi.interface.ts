@@ -6,6 +6,11 @@ export interface User {
     password: string | null;
 }
 
+export interface ApiResponse {
+    users: User[];
+    lastPage: number;
+}
+
 export interface Login {
     nombre: string | null;
     password: string | null;

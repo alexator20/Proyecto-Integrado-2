@@ -90,8 +90,8 @@ class UsuarioController extends AbstractController
         }
     }
 
-    #[Route('/viewUsers', name: 'app_listUsers')]
-    public function listUsers(Request $request): Response
+    /* #[Route('/viewUsers', name: 'app_listUsers')]
+    public function listUsers(): Response
     {
         $userRepo = $this->em->getRepository(Usuario::class);
         $users = $userRepo->findAll();
@@ -111,19 +111,84 @@ class UsuarioController extends AbstractController
 
         // Devolver los datos como una respuesta JSON
         return new JsonResponse($usersArray);
-    }
-    //la funcion listUsers esta repertida
-/*
-    #[Route('/viewUsers', name: 'app_cliente')]
+    } */
+
+    /* #[Route('/viewUsers', name: 'app_listUsers')]
     public function listUsers(Request $request): Response
     {
-        $clienteRepository = $this->em->getRepository(Usuario::class)->findAll();
+        $userRepo = $this->em->getRepository(Usuario::class);
 
-        return $this->render('client/index.html', [
-            'resultados' => $clienteRepository
-        ]);
+        // Parámetros de paginación
+        $page = $request->query->getInt('page', 1); // Página actual, por defecto la primera página
+        $limit = $request->query->getInt('limit', 10); // Cantidad de elementos por página
+
+        // Calcula el offset
+        $offset = ($page - 1) * $limit;
+
+        // Recupera los usuarios con la paginación
+        $users = $userRepo->findBy([], [], $limit, $offset);
+
+        // Convertir los datos a un arreglo asociativo
+        $usersArray = [];
+        foreach ($users as $user) {
+            $usersArray[] = [
+                'id' => $user->getId(),
+                'nombre' => $user->getNombre(),
+                'grupo_perteneciente_id' => $user->getGrupoPerteneciente()->getNombre(),
+                'edad' => $user->getEdad(),
+                'rol' => $user->getRol(),
+                'password' => $user->getPassword()
+            ];
+        }
+
+        // Devolver los datos como una respuesta JSON
+        return new JsonResponse($usersArray);
+    } */
+
+    #[Route('/viewUsers', name: 'app_listUsers')]
+    public function listUsers(Request $request): Response
+    {
+        $userRepo = $this->em->getRepository(Usuario::class);
+
+        // Parámetros de paginación
+        $page = $request->query->getInt('page', 1); // Página actual, por defecto la primera página
+        $limit = $request->query->getInt('limit', 10); // Cantidad de elementos por página
+
+        // Calcula el offset
+        $offset = ($page - 1) * $limit;
+
+        // Recupera los usuarios con la paginación
+        $users = $userRepo->findBy([], [], $limit, $offset);
+
+        // Recupera el número total de usuarios
+        $totalUsers = count($userRepo->findAll());
+
+        // Calcula el número total de páginas
+        $totalPages = ceil($totalUsers / $limit);
+
+        // Convertir los datos a un arreglo asociativo
+        $usersArray = [];
+        foreach ($users as $user) {
+            $usersArray[] = [
+                'id' => $user->getId(),
+                'nombre' => $user->getNombre(),
+                'grupo_perteneciente_id' => $user->getGrupoPerteneciente()->getNombre(),
+                'edad' => $user->getEdad(),
+                'rol' => $user->getRol(),
+                'password' => $user->getPassword()
+            ];
+        }
+
+        // Arreglo de respuesta
+        $responseArray = [
+            'users' => $usersArray,
+            'lastPage' => $totalPages
+        ];
+
+        // Devolver los datos como una respuesta JSON
+        return new JsonResponse($responseArray);
     }
-*/
+
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
     #[Route('/apiUser', name: 'api_user', methods: ['get'])]
     public function oneuser(ManagerRegistry $doctrine, Request $request): JsonResponse
@@ -150,7 +215,6 @@ class UsuarioController extends AbstractController
 
 
                 return $this->json($data);
-
             } else {
                 return new JsonResponse(['message' => 'este no es su contraseña'], 200);
             }
