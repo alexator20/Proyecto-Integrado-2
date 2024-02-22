@@ -1,52 +1,46 @@
 <section id="contacto">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>Contacteme</h2>
-          <hr class="star-primary">
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>Contactam</h2>
       </div>
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" novalidate>
-            <div class="row control-group">
-              <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Name</label>
-                <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Por favor, ingrese su name.">
-                <p class="help-block text-danger"></p>
-              </div>
+        <form class="row g-3 needs-validation" novalidate>
+  
+          <div class="col-md-4 offset-md-4">
+            <label for="inputName" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Nom" required>
+            <div class="invalid-feedback">
+              Per favor, introdueix el teu nom.
             </div>
-            <div class="row control-group">
-              <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Email</label>
-                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor, ingrese su email address.">
-                <p class="help-block text-danger"></p>
-              </div>
+          </div>
+  
+          <div class="col-md-4 offset-md-4">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="user@gmail.com"
+              required>
+            <div class="invalid-feedback">
+              Per favor, introdueix el teu email.
             </div>
-            <div class="row control-group">
-              <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Número de teléfono</label>
-                <input type="tel" class="form-control" placeholder="Número de teléfono" id="phone" required data-validation-required-message="Por favor, ingrese su número de teléfono.">
-                <p class="help-block text-danger"></p>
-              </div>
+          </div>
+  
+          <div class="col-md-4 offset-md-4">
+            <label for="exampleFormControlTextarea1" class="form-label">Misatge</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+              placeholder="Vuic informació sobre... / Tenia preguntes sobre..." required></textarea>
+            <div class="invalid-feedback">
+              Per favor, introdueix el misatge.
             </div>
-            <div class="row control-group">
-              <div class="form-group col-xs-12 floating-label-form-group controls">
-                <label>Mensaje</label>
-                <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Por favor, ingrese un mensaje."></textarea>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <br>
-            <div id="success"></div>
-            <div class="row">
-              <div class="form-group col-xs-12">
-                <button type="submit" class="btn btn-success btn-lg">Enviar</button>
-              </div>
-            </div>
-          </form>
-        </div>
+          </div>
+  
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-outline-primary">Enviar</button>
+          </div>
+  
+        </form>
+  
       </div>
     </div>
-  </section>
+    
+  </div>
+</section>
