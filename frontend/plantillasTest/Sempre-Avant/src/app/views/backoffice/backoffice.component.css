@@ -1,19 +1,19 @@
-.btn{
+.btn {
     background-color: #886ce4;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #886ce4;
     background-color: #b86cdc;
     color: white;
 }
 
-.boton{
+.boton {
     background-color: #886ce4;
     overflow: hidden;
 }
 
-.boton:hover{
+.boton:hover {
     background-color: #886ce4;
     background-color: #b86cdc;
     color: white;
