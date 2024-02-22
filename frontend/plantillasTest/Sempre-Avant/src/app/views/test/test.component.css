@@ -8,10 +8,24 @@
     width: 8vh;
 }
 
+#carouselExampleControls{
+    margin:auto;
+}
+
 img {
     transition: transform 0.3s ease;
+    height: 70vh;
+    width: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aqua;
   }
 
 img:hover {
     transform: scale(1.02); /* Aumenta el tamaño al 110% */
+}
+
+a{
+    text-decoration: none;
+    color:black
 }
