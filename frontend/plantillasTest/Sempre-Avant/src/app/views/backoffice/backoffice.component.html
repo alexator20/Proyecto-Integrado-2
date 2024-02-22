@@ -1,8 +1,8 @@
 <main>
 
-    <div class="container-fluid" style="background-color: blue;">
+    <div class="container-fluid" style="background-color:white;">
         <div class="row">
-            <div class="col-12 col-md-6" style="background-color: red;">
+            <div class="col-12 col-md-6" style="background-color: lightgrey;">
                 <div class="accordion accordion-flush p-3" id="accordion" style="width:100%">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingUsers">
@@ -15,12 +15,12 @@
                             data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div (click)="insertUser()" class="col-3 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(1)" class="col-3 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Insertar
                                         </button>
                                     </div>
-                                    <div (click)="updateUser()" class="col-3 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(2)" class="col-3 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Actualizar
                                         </button>
@@ -32,7 +32,7 @@
                                     </div>
                                     <div (click)="selectForm(3)" class="col-3 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
-                                            Eliminar
+                                            Visualizar
                                         </button>
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6" style="background-color: yellow;">
+            <div class="col-12 col-md-6" style="background-color: darkgray;">
                 @switch (condition) {
                     @case (1) {
                       <app-insert-user></app-insert-user>
@@ -214,9 +214,6 @@
                       Default case.
                     }
                   }
-                <p>
-                    Contenido del lado derecho
-                </p>
             </div>
         </div>
     </div>

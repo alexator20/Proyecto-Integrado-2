@@ -47,5 +47,5 @@ export class InsertUserComponent {
         })
       )
       .subscribe();
-  }
+      alert('Inserción realizada correctamente')  }
 }
