@@ -2,6 +2,22 @@
 
 <div class="row">
     <div class="col-md-6">
-        <img src="../../../assets/imgs/scouts/castores1.jpg" height="300" alt="...">
+        <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+
+            <label for="routes">Elige un año para mostrar las fotos:</label>
+
+            <select name="routes" id="routes" required autofocus>
+
+                @for (item of rutas; track item; let i = $index) {
+                <option (click)="onFolder(i)" [value]=item.title formControlName="routes" >{{item.title}}</option>
+                }
+
+            </select>
+            
+            <div class="mb-3 col-9 col-md-3">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+
+        </form>
     </div>
 </div>

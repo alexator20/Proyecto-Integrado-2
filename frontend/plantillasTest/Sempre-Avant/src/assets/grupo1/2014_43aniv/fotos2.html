@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Fotos - Asociación y Grupo Scout Sempre Avant </title>
+</head>
+<script type="text/javascript">
+	function avanzarFotos(){
+		var total = document.getElementById("num_fotos").value;
+		var capacidad = document.getElementById("fotos_por_avance").value;
+		var foto_actual = document.getElementById("foto_actual").value;
+	
+		// vamos poniendo la siguiente foto
+		for (i = 1; i <= capacidad; i++) {
+			var foto_a_poner = eval(foto_actual) + i + eval(capacidad) - 1;
+			if (foto_a_poner <= eval(total)) {
+				document.getElementById("img"+i).src = "foto" + foto_a_poner +".JPG"
+			} else {
+				document.getElementById("img"+i).style.display = "none";
+				document.getElementById("adelante").style.display = "none";
+			}
+		}
+		
+		document.getElementById("atras").style.display = "inline";
+		document.getElementById("foto_actual").value = eval(foto_actual) + eval(capacidad);
+	}
+	
+	function retrocederFotos(){
+		var total = document.getElementById("num_fotos").value;
+		var capacidad = document.getElementById("fotos_por_avance").value;
+		var foto_actual = document.getElementById("foto_actual").value;
+		foto_actual =  eval(foto_actual) - eval(capacidad);
+		document.getElementById("foto_actual").value = foto_actual;
+		
+		if (foto_actual == "1") document.getElementById("atras").style.display = "none";
+		
+		// vamos poniendo la siguiente foto
+		for (i = 1; i <= capacidad; i++) {
+			var foto_a_poner = eval(foto_actual) + i - 1;
+			document.getElementById("img"+i).src = "foto" + foto_a_poner +".JPG"
+			document.getElementById("img"+i).style.display = "inline";
+		}
+		document.getElementById("adelante").style.display = "inline";
+	}
+	
+</script>
+
+<body margin="0" scroll="no" style = "background-color:#FFFFFF" onLoad="document.getElementById('foto_actual').value = '1'">
+
+<div align="left">
+  <table width="700" border="0">
+    <tr heigth="10px">
+      <td> </td>
+    </tr>
+    <tr heigth="10px">
+      <td> </td>
+    </tr>
+    <tr>
+      <td align= center>
+        <input type="hidden" id="num_fotos" value="64">
+        <input type="hidden" id="fotos_por_avance" value="6">
+        <input type="hidden" id="foto_actual" value="1">
+        <div style="">
+          <table border="1" align="center" bordercolor="#990000">
+            <tr>
+              <td width = "80%" align = "center" >
+                <input type="image" src="../atras.jpg" name="image" id="atras"  width="50" height="50" style="display:none" onClick="retrocederFotos()">
+                <img id="img1" src="foto1.JPG" height="50px" onClick="document.getElementById('img_grande').src = this.src"/>&nbsp;
+                <img id="img2" src="foto2.JPG" height="50px" onClick="document.getElementById('img_grande').src = this.src"/>&nbsp;
+                <img src="foto3.JPG" name="img3" height="50px" id="img3" onClick="document.getElementById('img_grande').src = this.src"/>&nbsp;
+                <img src="foto4.JPG" name="img4" height="50px" id="img4" onClick="document.getElementById('img_grande').src = this.src"/>&nbsp;
+                <img src="foto5.JPG" name="img5" height="50px" id="img5" onClick="document.getElementById('img_grande').src = this.src"/>&nbsp;
+                <img src="foto6.JPG" name="img6" height="50px" id="img6" onClick="document.getElementById('img_grande').src = this.src"/>&nbsp;                 
+              <input type="image" src="../adelante.jpg" name="image" id="adelante" width="50" height="50" onClick="avanzarFotos()">		       </td>
+          </table>
+        </div>      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="foto1.JPG" name="img_grande" width="600" height="400" id="img_grande"/>&nbsp;      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
