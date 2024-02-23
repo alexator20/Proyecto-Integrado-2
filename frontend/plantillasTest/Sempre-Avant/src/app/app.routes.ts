@@ -27,7 +27,7 @@ import { FotosComponent } from './views/fotos/fotos.component';
 import { OrganizacionComponent } from './views/organizacion/organizacion.component';
 import { VideosComponent } from './views/videos/videos.component';
 import { AudiosComponent } from './views/audios/audios.component';
-
+import { PublicacionsComponent } from './views/publicacions/publicacions.component';
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
     { path: '', component: HomeComponent },
@@ -59,6 +59,7 @@ export const routes: Routes = [
     { path: 'videos', component: VideosComponent },
     { path: 'audios', component: AudiosComponent },
     { path: 'organizacion', component: OrganizacionComponent },
+    { path: 'publicacions', component: PublicacionsComponent}
 
 ];
 
