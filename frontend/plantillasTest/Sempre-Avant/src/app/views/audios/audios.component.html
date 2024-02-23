@@ -4,10 +4,20 @@
             <h1 class="titCard">Galería de audios</h1>
             <!--  -->
             <div class="row">
-                <audio controls>
-                    <!-- poner bien la ruta -->
-                    <source src="../../../../../../../Documentacion/imgs/LlamadaScout.mp3" type="audio/mpeg">
-                </audio>
+
+                @for (item of audios; track item) {
+
+                    <div class="col-md-6 carta">
+                        <div class="card">
+                            <audio controls>
+                                <source [src]=item.src type="audio/mpeg">
+                            </audio>
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.title}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    }
 
             </div>
         </div>
