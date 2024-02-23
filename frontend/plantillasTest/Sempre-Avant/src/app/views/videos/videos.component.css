@@ -1,12 +1,35 @@
-.card{
-    border-width: 3px;
-    border-color: rgb(148, 107, 148);
-}
-
-.card-body{
- min-height: 20vh;
-}
-
-.carta{
-    padding-bottom: 3%;
-}
+/* Ajuste del CSS para aumentar el tamaño del iframe */
+.carta .card iframe {
+    width: 100%; /* Asegura que el iframe ocupe todo el ancho disponible de su contenedor */
+    height: 360px; /* Aumenta la altura del iframe */
+    border: none; /* Elimina el borde del iframe */
+  }
+  
+  /* Asegura que la tarjeta contenedora del iframe también se ajuste para albergar el nuevo tamaño */
+  .carta .card {
+    margin: 15px 0; /* Espaciado alrededor de cada tarjeta de video */
+  }
+  
+  @media (min-width: 768px) {
+    .carta .card iframe {
+      height: 450px; /* Aumenta aún más la altura del iframe para pantallas más grandes */
+    }
+  }
+  
+  /* Estilos generales para las tarjetas y el contenido */
+  .card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 20px; /* Espaciado entre tarjetas */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .titCard {
+    color: #5d3f6a; /* Morado más oscuro para el título */
+    margin-bottom: 20px; /* Espaciado después del título */
+  }
+  
