@@ -28,6 +28,8 @@ import { OrganizacionComponent } from './views/organizacion/organizacion.compone
 import { VideosComponent } from './views/videos/videos.component';
 import { AudiosComponent } from './views/audios/audios.component';
 import { PublicacionsComponent } from './views/publicacions/publicacions.component';
+import { CalendarioComponent } from './views/calendario/calendario.component';
+
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
     { path: '', component: HomeComponent },
@@ -59,7 +61,8 @@ export const routes: Routes = [
     { path: 'videos', component: VideosComponent },
     { path: 'audios', component: AudiosComponent },
     { path: 'organizacion', component: OrganizacionComponent },
-    { path: 'publicacions', component: PublicacionsComponent}
+    { path: 'publicacions', component: PublicacionsComponent},
+    { path: 'calendario', component: CalendarioComponent }
 
 ];
 
