@@ -1,12 +1,47 @@
-.card{
-    border-width: 3px;
-    border-color: rgb(148, 107, 148);
+/* Estilos Generales */
+.container-fluid {
+    background-color: #f8f9fa; /* Un fondo claro para toda la galería */
+    padding: 20px;
 }
 
-.card-body{
- min-height: 10vh;
+.card.text-bg-light {
+    background-color: #ffffff; /* Fondo blanco para la tarjeta principal */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    border-radius: 8px; /* Bordes redondeados para un aspecto moderno */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
 }
 
-.carta{
-    padding-bottom: 3%;
+.card-body {
+    padding: 20px; /* Espaciado interno adecuado para el contenido de la tarjeta */
+}
+
+/* Estilos para los títulos */
+.titCard {
+    color: #495057; /* Color oscuro para los títulos, asegurando buena legibilidad */
+    text-align: center; /* Centrar los títulos para darles mayor importancia */
+    margin-bottom: 20px; /* Espaciado después del título para separarlo del contenido */
+}
+
+/* Estilos para las tarjetas de audios */
+.carta .card {
+    margin: 10px 0; /* Espaciado alrededor de cada tarjeta de audio para evitar que se sientan apretadas */
+    background-color: #e9ecef; /* Un fondo ligeramente distinto para las tarjetas de audio */
+    border-radius: 5px; /* Bordes ligeramente redondeados para las tarjetas de audio */
+}
+
+audio {
+    width: 100%; /* Hacer que el control de audio ocupe todo el ancho disponible */
+    margin: 10px 0; /* Espaciado alrededor del control de audio */
+}
+
+.card-title {
+    color: #691993; /* Color crema claro para los títulos de las tarjetas */
+    text-align: center; /* Centrar el título del audio dentro de su tarjeta */
+}
+
+/* Mejoras responsivas para una mejor visualización en dispositivos móviles */
+@media (max-width: 768px) {
+    .carta {
+        padding: 0 15px; /* Añadir algo de padding en los lados en pantallas pequeñas para evitar que el contenido toque los bordes */
+    }
 }
