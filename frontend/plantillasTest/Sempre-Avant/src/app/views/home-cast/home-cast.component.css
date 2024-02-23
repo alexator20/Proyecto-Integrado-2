@@ -1,57 +1,66 @@
 /* Estilos Generales */
-body, .text-bg-light {
-    background-color: #f4eaff; /* Fondo morado suave para todo el contenido */
-    color: #333; /* Color de texto oscuro para contraste */
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  /* Estilos para las tarjetas */
-  .card {
-    background-color: #ffffff; /* Fondo blanco para las tarjetas */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    margin-bottom: 20px; /* Espaciado entre tarjetas */
-  }
-  
-  .card-body {
-    padding: 20px;
-  }
-  
-  /* Estilos para los títulos y subtítulos */
-  .titCard, h1 {
-    color: #5d3f6a; /* Morado más oscuro para los títulos */
-    margin-bottom: 15px; /* Espaciado después de los títulos */
-  }
-  
-  h4, p {
-    color: #333; /* Mantener el texto legible y oscuro */
-  }
-  
-  /* Ajustes para imágenes */
-  img {
-    border-radius: 8px; /* Bordes ligeramente redondeados para las imágenes */
-    margin: 3%;
-  }
-  
-  /* Estilos para los enlaces */
-  a {
-    color: #885ead; /* Un morado más intenso para los enlaces */
-    text-decoration: none; /* Sin subrayado para un aspecto más limpio */
-  }
-  
-  a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón para indicar interactividad */
-  }
-  
-  /* Estilos para las secciones de colaboración y transparencia */
-  .colaboracion img, .row h1 {
-    margin-top: 20px; /* Espaciado superior para imágenes y títulos en secciones específicas */
-  }
-  
-  /* Adaptaciones para dispositivos móviles */
-  
+body,
+.text-bg-light {
+    background-color: #f4eaff;
+    /* Fondo morado suave para todo el contenido */
+    color: #333;
+    /* Color de texto oscuro para contraste */
+}
 
-  
+.container {
+    padding: 20px;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: #ffffff;
+    /* Fondo blanco para las tarjetas */
+    border-radius: 8px;
+    /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Estilos para los títulos y subtítulos */
+.titCard,
+h1 {
+    color: #5d3f6a;
+    /* Morado más oscuro para los títulos */
+}
+
+h4,
+p {
+    color: #333;
+    /* Mantener el texto legible y oscuro */
+}
+
+/* Ajustes para imágenes */
+img {
+    border-radius: 8px;
+    /* Bordes ligeramente redondeados para las imágenes */
+    margin: 2%;
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #885ead;
+    /* Un morado más intenso para los enlaces */
+    text-decoration: none;
+    /* Sin subrayado para un aspecto más limpio */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Subrayado al pasar el ratón para indicar interactividad */
+}
+
+/* Estilos para las secciones de colaboración y transparencia */
+.colaboracion img,
+.row h1 {
+    margin-top: 20px;
+    /* Espaciado superior para imágenes y títulos en secciones específicas */
+}
