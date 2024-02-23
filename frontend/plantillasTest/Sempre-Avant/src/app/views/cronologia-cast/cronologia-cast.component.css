@@ -1,30 +1,57 @@
-.titCard{
-    display: flex;
-    align-self: left;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    margin-left: -30px;
-    text-align: center;
-    padding: 3%;
+/* Estilos Generales */
+.container-fluid {
+    background-color: #f4eaff; /* Fondo morado suave */
+    padding: 20px;
 }
 
-.card{
-    margin:5px;
-    border-width: 3px;
-    border-color: rgb(148, 107, 148);
+.card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border-radius: 8px; /* Bordes redondeados para suavizar la apariencia */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    margin-bottom: 20px; /* Espaciado entre elementos */
 }
 
-p{
-    font-size: 20px;
-    font-weight: bold;
+.card-body {
+    padding: 20px; /* Espaciado interno */
 }
 
-.carousel-control-prev{
-    background-color: black;
-    width: 7vh;
+/* Estilos para los Títulos */
+.titCard {
+    color: #5d3f6a; /* Color morado oscuro para títulos */
+    text-align: center; /* Centrado de títulos */
+    margin-bottom: 15px; /* Espaciado después de títulos */
 }
 
-.carousel-control-next{
-    background-color: black;
-    width: 7vh;
+/* Personalización de textos y enlaces */
+p {
+    font-size: 16px; /* Tamaño estándar para texto */
+    color: #333; /* Color oscuro para contraste */
+    line-height: 1.5; /* Espaciado de línea para mejor lectura */
+    text-align: center; /* Alineación central para descripciones */
+}
+
+a {
+    color: #885ead; /* Color morado para enlaces */
+    text-decoration: underline; /* Subrayado para identificar enlaces */
+}
+
+a:hover {
+    color: #553285; /* Color morado más oscuro al pasar el mouse */
+}
+
+/* Estilización de carruseles */
+.carousel-inner img {
+    border-radius: 8px; /* Bordes redondeados para las imágenes del carrusel */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(35%) sepia(25%) saturate(3500%) hue-rotate(221deg) brightness(100%) contrast(97%); /* Cambia el color de los iconos del carrusel para mejor visibilidad */
+}
+
+/* Ajustes responsivos para mejorar la visualización en dispositivos móviles */
+@media (max-width: 768px) {
+    p {
+        font-size: 14px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    }
 }

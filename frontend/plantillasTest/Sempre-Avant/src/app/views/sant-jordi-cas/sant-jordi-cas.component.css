@@ -1,32 +1,44 @@
-.titCard{
-    display: flex;
-    align-self: left;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    margin-left: -30px;
-    text-align: center;
-    padding: 3%;
+
+
+
+/* Estilos Generales */
+.container-fluid {
+    background-color: #fff5ee; /* Un tono suave que evoca la calidez y la tradición */
+    padding: 20px;
 }
 
-.card{
-    margin:5px;
-    border-width: 3px;
-    border-color: rgb(148, 107, 148);
+.card {
+    background-color: #ffffff; /* Fondo claro para las tarjetas, promoviendo la legibilidad */
+    border-radius: 8px; /* Bordes redondeados para un aspecto más amigable y moderno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad y destacar la tarjeta */
+    margin-bottom: 20px; /* Espaciado entre elementos para una estructura clara */
 }
 
-p{
-    font-size: 20px;
-    font-weight: bold;
+.card-body {
+    padding: 20px; /* Espaciado interno para evitar que el contenido se sienta apretado */
 }
 
-img{
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 300px;
+/* Estilos para Títulos */
+.titCard {
+    color: #8B0000; /* Color oscuro rojizo, evocando la valentía y pasión asociadas a Sant Jordi */
+    text-align: center; /* Centrado para dar importancia a los títulos y sub-títulos */
+    margin-bottom: 15px; /* Espaciado después de los títulos para separar claramente las secciones */
 }
 
-.textoP{
-    font-size: 20px;
-    font-weight:bold;
+/* Estilos para el texto */
+.textoP {
+    color: #333; /* Color oscuro para una excelente legibilidad */
+    text-align: justify; /* Alineación justificada para una presentación uniforme del texto */
+    line-height: 1.6; /* Espaciado de línea para facilitar la lectura */
+}
+
+
+/* Ajustes responsivos para mejorar la visualización en dispositivos móviles */
+@media (max-width: 768px) {
+    .textoP {
+        font-size: smaller; /* Ajusta el tamaño del texto para mejorar la legibilidad en pantallas pequeñas */
+    }
+    .titCard {
+        font-size: medium; /* Ajuste del tamaño del título para mantener la jerarquía visual en dispositivos pequeños */
+    }
 }
