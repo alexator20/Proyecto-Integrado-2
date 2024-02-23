@@ -233,7 +233,7 @@ class UsuarioController extends AbstractController
     }
 
     //api que recibe datos y comprueba si existe el usuario y envia su informacion
-    #[Route('/apiUser', name: 'api_user', methods: ['get'])]
+    #[Route('/apiUser', name: 'api_user', methods: ['post'])]
     public function oneuser(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
         $data = [];
@@ -280,7 +280,7 @@ class UsuarioController extends AbstractController
         $product = $entityManager->getRepository(Grupo::class)->find(4);
         $project->setPassword($hashedPassword);
         $project->setEdad(28);
-        $project->setRol("admin");
+        $project->setRol("usuario");
         $project->setGrupoPerteneciente($product);
         $entityManager->persist($project);
         $entityManager->flush();
