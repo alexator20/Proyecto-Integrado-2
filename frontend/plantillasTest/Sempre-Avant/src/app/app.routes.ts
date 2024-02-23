@@ -29,6 +29,8 @@ import { VideosComponent } from './views/videos/videos.component';
 import { AudiosComponent } from './views/audios/audios.component';
 import { PublicacionsComponent } from './views/publicacions/publicacions.component';
 import { CalendarioComponent } from './views/calendario/calendario.component';
+import { adminGuard } from './admin.guard';
+
 
 export const routes: Routes = [
     { path: 'home', redirectTo: 'home', pathMatch: 'full' },
@@ -56,7 +58,7 @@ export const routes: Routes = [
     { path: 'santjordi-cast', component: SantJordiCasComponent },
     { path: 'contacto', component: ContactoComponent },
     { path: 'contacto-cast', component: ContactoCastComponent },
-    { path: 'admin', component: BackofficeComponent },
+    { path: 'admin', component: BackofficeComponent, canActivate: [adminGuard] },
     { path: 'fotos', component: FotosComponent },
     { path: 'videos', component: VideosComponent },
     { path: 'audios', component: AudiosComponent },

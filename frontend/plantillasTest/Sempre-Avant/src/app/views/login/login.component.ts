@@ -4,6 +4,7 @@ import { LoginService } from '../../services/login.service';
 import { tap, catchError } from 'rxjs/operators';
 import { Login } from '../../interfaces/servi.interface';
 import { HeaderComponent } from '../../components/header/header.component';
+import { Router } from '@angular/router';
 
 
 
@@ -22,7 +23,9 @@ export class LoginComponent {
     password: new FormControl('')
   });
   public rol:string="";
-  constructor(public formularioService: LoginService) { }
+  
+
+  constructor(public formularioService: LoginService, private router: Router) { }
 
   onSubmit() {
     const userData: Login = {
@@ -41,7 +44,13 @@ export class LoginComponent {
             this.rol=response[0].rol;
             console.log(this.rol);
             localStorage.setItem('rol',this.rol);
-            window.location.reload();
+            const nuevaventana=window.open("http://localhost:4200");
+            /*
+            nuevaventana.onload=()=>{
+              nuevaventana?.location.reload();
+            }*/
+            this.router.navigate(['/home']);
+
            }
           },
           error: error => {
