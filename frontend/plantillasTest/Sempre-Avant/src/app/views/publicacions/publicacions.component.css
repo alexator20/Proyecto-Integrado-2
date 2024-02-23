@@ -1,0 +1,46 @@
+.carousel-control-prev{
+    background-color: black;
+    width: 8vh;
+    margin:auto;
+}
+
+.carousel-control-next{
+    background-color: black;
+    width: 8vh;
+}
+
+#carouselExampleControls{
+    margin:auto;
+    background-color: burlywood;
+}
+
+#carouselExampleControls2, #carouselExampleControls3, #carouselExampleControls5{
+    margin:auto;
+    margin-top:2vh;
+    background-color: burlywood;
+}
+
+img {
+    transition: transform 0.3s ease;
+    height: 70vh;
+    width: 40vh;
+    background-color: aqua;
+    margin-top: 2vh;
+}
+
+
+.card{
+    margin:5px;
+    border-width: 3px;
+    border-color: rgb(148, 107, 148);
+}
+
+
+img:hover {
+    transform: scale(1.02); /* Aumenta el tamaño al 110% */
+}
+
+a{
+    text-decoration: none;
+    color:black
+}
