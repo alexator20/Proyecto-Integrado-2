@@ -87,3 +87,10 @@ h1 {
   background-color: black;
   width: 7vh;
 }
+
+@media (max-width: 768px) {
+  .card-body img {
+    width: 100%; /* Asegurar que las imágenes sean responsivas en móviles */
+    height: auto;
+  }
+}

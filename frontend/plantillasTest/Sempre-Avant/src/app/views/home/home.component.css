@@ -52,10 +52,6 @@ body, .text-bg-light {
   }
   
   /* Adaptaciones para dispositivos móviles */
-  @media (max-width: 768px) {
-    .card-body img {
-      width: 100%; /* Asegurar que las imágenes sean responsivas en móviles */
-      height: auto;
-    }
-  }
+  
+
   
