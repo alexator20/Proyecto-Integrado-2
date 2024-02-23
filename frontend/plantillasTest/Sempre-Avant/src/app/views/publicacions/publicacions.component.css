@@ -12,12 +12,14 @@
 #carouselExampleControls{
     margin:auto;
     background-color: burlywood;
+    border-radius: 2vh;
 }
 
-#carouselExampleControls2, #carouselExampleControls3, #carouselExampleControls5{
+#carouselExampleControls2, #carouselExampleControls3, #carouselExampleControls4, #carouselExampleControls5{
     margin:auto;
     margin-top:2vh;
     background-color: burlywood;
+    border-radius: 2vh;
 }
 
 img {
@@ -35,6 +37,10 @@ img {
     border-color: rgb(148, 107, 148);
 }
 
+.text-bg-light {
+    color: #ffffff;
+}
+
 
 img:hover {
     transform: scale(1.02); /* Aumenta el tamaño al 110% */
@@ -43,4 +49,8 @@ img:hover {
 a{
     text-decoration: none;
     color:black
+}
+
+.titulo{
+    margin-top: 2vh;
 }

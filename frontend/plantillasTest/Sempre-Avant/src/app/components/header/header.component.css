@@ -1,3 +1,11 @@
 .icons{
     height: 7vh;
 }
+
+nav a {
+    color: white;
+}
+
+nav .dropdown-menu a {
+    color: black;
+}
