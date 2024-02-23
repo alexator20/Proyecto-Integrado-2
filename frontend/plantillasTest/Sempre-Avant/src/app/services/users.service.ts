@@ -14,6 +14,10 @@ export class UsersService {
     return this.http.post('http://localhost:8000/insertUser', formData);
   }
 
+  enviarDatosUpdate(id: number, formData: User) {
+    return this.http.post(`http://localhost:8000/updateUser/${id}`, formData);
+  }
+
   // Método para recibir los datos de los usuarios con paginación
   recibirDatosUsers(page: number, pageSize: number): Observable<ApiResponse> {
     const params = new HttpParams()

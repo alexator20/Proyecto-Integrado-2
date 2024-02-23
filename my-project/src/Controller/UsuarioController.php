@@ -90,6 +90,49 @@ class UsuarioController extends AbstractController
         }
     }
 
+    #[Route('/updateUser/{id}', name: 'app_update')]
+    public function update(Request $request, $id): JsonResponse
+    {
+        $recibe = json_decode($request->getContent(), true);
+
+        $nombre = $recibe['nombre'];
+        $grupoId = $recibe['grupo_perteneciente_id'];
+        $edad = $recibe['edad'];
+        $rol = $recibe['rol'];
+        $pass = $recibe['password'];
+
+        try {
+            // Obtener el usuario existente por su ID
+            $usuario = $this->em->getRepository(Usuario::class)->find($id);
+
+            if (!$usuario) {
+                throw new \Exception('El usuario especificado no existe.');
+            }
+
+            // Obtener el objeto Grupo correspondiente al ID del grupo
+            $grupo = $this->em->getRepository(Grupo::class)->find($grupoId);
+
+            if (!$grupo) {
+                throw new \Exception('El grupo especificado no existe.');
+            }
+
+            // Actualizar los campos del usuario
+            $usuario->setNombre($nombre);
+            $usuario->setGrupoPerteneciente($grupo);
+            $usuario->setEdad($edad);
+            $usuario->setRol($rol);
+            $usuario->setPassword($pass);
+
+            // Persistencia de los cambios
+            $this->em->flush();
+
+            return new JsonResponse(['message' => 'Usuario actualizado correctamente.'], JsonResponse::HTTP_OK);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
+        }
+    }
+
+
     /* #[Route('/viewUsers', name: 'app_listUsers')]
     public function listUsers(): Response
     {

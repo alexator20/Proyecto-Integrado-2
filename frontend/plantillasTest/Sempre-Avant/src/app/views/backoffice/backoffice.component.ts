@@ -3,12 +3,13 @@ import { LoginComponent } from '../login/login.component';
 import { TestearFormuComponent } from '../../components/testear-formu/testear-formu.component';
 import { InsertUserComponent } from '../../components/insert-user/insert-user.component';
 import { UserTableComponent } from '../../components/user-table/user-table.component';
+import { UpdateUserComponent } from '../../components/update-user/update-user.component';
 
 
 @Component({
   selector: 'app-backoffice',
   standalone: true,
-  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent, UserTableComponent],
+  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent, UserTableComponent, UpdateUserComponent],
   templateUrl: './backoffice.component.html',
   styleUrl: './backoffice.component.css'
 })

@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { UsersService } from '../../services/users.service';
 import { ApiResponse, User } from '../../interfaces/servi.interface';
+import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-table',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './user-table.component.html',
   styleUrl: './user-table.component.css'
 })
@@ -18,9 +19,18 @@ export class UserTableComponent {
   public currentPage = 1;
   public pageSize = 10;
   public totalPages = 1;
+  public updating = false;
+
+  reactiveForm = new FormGroup({
+    grupo_perteneciente_id: new FormControl(''),
+    nombre: new FormControl(''),
+    edad: new FormControl(''),
+    rol: new FormControl(''),
+    password: new FormControl('')
+  });
 
   constructor(private formularioService: UsersService) { }
-
+ 
   ngOnInit(): void {
     this.fetchUsterst(this.currentPage, this.pageSize);
   }
@@ -43,6 +53,14 @@ export class UserTableComponent {
     );
   }
 
+  public onClick(index: number): void {
+    if (this.updating==true) {
+      this.updating = false;
+    } else {
+      this.updating = true;
+    }
+  }
+
   onPageChange(page: number): void {
     this.currentPage = page;
     alert(this.currentPage);
@@ -61,6 +79,9 @@ export class UserTableComponent {
       this.currentPage++;
       this.onPageChange(this.currentPage);
     }
+  }
+
+  onSubmit(): void {
   }
 /*
   fetchUsers() {
