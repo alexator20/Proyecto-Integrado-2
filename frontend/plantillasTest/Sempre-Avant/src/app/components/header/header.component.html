@@ -68,10 +68,10 @@
                     </li>
                 }
                 </ul>
-                @if(rol == ""){
-                <a routerLink="/login" routerLinkActive="active"><img class="icons" src="../../../assets/imgs/login.png" alt="personita login" style="margin-right: 2vh;"></a>
-                }@else{
+                @if(rol == ''){
                     <button (click)="logout()">Logout</button>
+                }@else{
+                    <a routerLink="/login" routerLinkActive="active"><img class="icons" src="../../../assets/imgs/login.png" alt="personita login" style="margin-right: 2vh;"></a>
                 }
                 <a routerLink="/home-cast" routerLinkActive="active"><img class="icon" src="../../../assets/imgs/idio_cas.png" alt="bandera españa"></a> 
             </div>
