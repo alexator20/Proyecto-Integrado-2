@@ -1,7 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" routerLink="/home-cast" routerLinkActive="active"><img src="../../../assets/imgs/logo-white.png" alt="logo blanco de sempre avant" height="45"></a>
+            <a class="navbar-brand" routerLink="/home-cast" routerLinkActive="active"><img
+                    src="../../../assets/imgs/logo-white.png" alt="logo blanco de sempre avant" height="45"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -15,22 +16,29 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="#">Nuestra historia</a></li>
-                            <li><a class="dropdown-item" routerLink="/organizacion" routerLinkActive="active">Organización</a></li>
+                            <li><a class="dropdown-item" routerLink="/organizacion"
+                                    routerLinkActive="active">Organización</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Seccions
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Secciones
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                          <li><a class="dropdown-item" routerLink="/castores" routerLinkActive="active">Jóvenes Castores</a></li>
-                          <li><a class="dropdown-item" routerLink="/manada" routerLinkActive="active">Manada</a></li>
-                          <li><a class="dropdown-item" routerLink="/tropa" routerLinkActive="active">Tropa</a></li>
-                          <li><a class="dropdown-item" routerLink="/esculta" routerLinkActive="active">Esculta</a></li>
-                          <li><a class="dropdown-item" routerLink="/clan" routerLinkActive="active">Clan</a></li>
-                          <li><a class="dropdown-item" routerLink="/scouters" routerLinkActive="active">Scouters</a></li>
+                            <li><a class="dropdown-item" routerLink="/castores-cast" routerLinkActive="active">Jóvenes
+                                    Castores</a></li>
+                            <li><a class="dropdown-item" routerLink="/manada-cast" routerLinkActive="active">Manada</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/tropa-cast" routerLinkActive="active">Tropa</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/esculta-cast"
+                                    routerLinkActive="active">Esculta</a></li>
+                            <li><a class="dropdown-item" routerLink="/clan-cast" routerLinkActive="active">Clan</a></li>
+                            <li><a class="dropdown-item" routerLink="/scouters-cast"
+                                    routerLinkActive="active">Scouters</a></li>
                         </ul>
-                      </li>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,7 +51,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/publicacions" routerLinkActive="active">Publicacions</a>
+                        <a class="nav-link" routerLink="/publicacions" routerLinkActive="active">Publicaciones</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
@@ -51,32 +59,32 @@
                             L'escoltisme
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" routerLink="/badenpowell">Baden Powell</a></li>
-                            <li><a class="dropdown-item" routerLink="/cronologia">Historia</a></li>
-                            <li><a class="dropdown-item" href="/santjordi">San Jordi</a></li>
+                            <li><a class="dropdown-item" routerLink="/badenpowell-cast">Baden Powell</a></li>
+                            <li><a class="dropdown-item" routerLink="/cronologia-cast">Historia</a></li>
+                            <li><a class="dropdown-item" href="/santjordi-cast">San Jordi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendari d'activitats</a>
+                        <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendario de
+                            actividades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacte</a>
+                        <a class="nav-link" routerLink="/contacto-cast" routerLinkActive="active">Contacto</a>
                     </li>
                     @if(rol === 'admin'){
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/admin" routerLinkActive="active">Panel Admin</a>
                     </li>
-                }
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/test" routerLinkActive="active">testevento</a>
-                    </li>
+                    }
                 </ul>
                 @if(rol == ""){
-                <a routerLink="/login" routerLinkActive="active"><img class="icons" src="../../../assets/imgs/login.png" alt="personita login" style="margin-right: 2vh;"></a>
+                <a routerLink="/login" routerLinkActive="active"><img class="icons" src="../../../assets/imgs/login.png"
+                        alt="personita login" style="margin-right: 2vh;"></a>
                 }@else{
-                    <button (click)="logout()">Logout</button>
+                <button (click)="logout()">Logout</button>
                 }
-                <a routerLink="/home" routerLinkActive="active"><img class="icon" src="../../../assets/imgs/idio_vlc.png" alt="bandera valenciana"></a> 
+                <a routerLink="/home" routerLinkActive="active"><img class="icon"
+                        src="../../../assets/imgs/idio_vlc.png" alt="bandera valenciana"></a>
             </div>
         </div>
     </nav>

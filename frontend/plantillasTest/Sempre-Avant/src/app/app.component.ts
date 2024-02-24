@@ -18,6 +18,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 export class AppComponent {
   title = 'Sempre-Avant';
   public test: boolean = true;
+
   }
 
    
