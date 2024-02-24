@@ -138,8 +138,6 @@ class UsuarioController extends AbstractController
     #[Route('/deleteUser/{id}', name: 'app_del')]
     public function delUser(Request $request, $id): JsonResponse
     {
-        $recibe = json_decode($request->getContent(), true);
-        $id = $recibe['id'];
         //
         try {
             // Obtener el usuario existente por su ID

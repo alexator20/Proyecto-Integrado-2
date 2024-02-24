@@ -4,18 +4,19 @@ import { TestearFormuComponent } from '../../components/testear-formu/testear-fo
 import { InsertUserComponent } from '../../components/insert-user/insert-user.component';
 import { UserTableComponent } from '../../components/user-table/user-table.component';
 import { UpdateUserComponent } from '../../components/update-user/update-user.component';
+import { GrupoTableComponent } from '../../components/grupo-table/grupo-table.component';
 
 
 @Component({
   selector: 'app-backoffice',
   standalone: true,
-  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent, UserTableComponent, UpdateUserComponent],
+  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent, UserTableComponent, UpdateUserComponent, GrupoTableComponent],
   templateUrl: './backoffice.component.html',
   styleUrl: './backoffice.component.css'
 })
 export class BackofficeComponent {
 
-  public condition = 1;
+  public condition = 2;
 
   public insertUser(): void {
     // Logic to insert a user goes here

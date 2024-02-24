@@ -102,6 +102,22 @@ export class UserTableComponent {
     }
   }
 
+ async clickDelete(index: number){
+    console.log('deleting', this.users[index].id);
+    try {
+      await this.formularioService.enviarDatosDel(this.users[index].id!).toPromise();
+      console.log('Usuario eliminado correctamente.');
+      alert('Usuario eliminado correctamente. Los cambios pueden tardar en verse relfejados');
+      // Actualizar la tabla después de eliminar el usuario
+      await this.fetchUsterst(this.currentPage, this.pageSize);
+
+      // Cambiar el estado de 'updating'
+      //this.updating = !this.updating;
+  } catch (error) {
+      console.error('Error al eliminar el usuario:', error);
+  }
+  }
+
   onPageChange(page: number): void {
     this.currentPage = page;
     alert(this.currentPage);
@@ -148,6 +164,7 @@ export class UserTableComponent {
       .subscribe()
     alert('Inserción realizada correctamente. Los cambios pueden tardar en verse')
     await this.fetchUsterst(this.currentPage, this.pageSize);
+
     if (this.updating == true) {
       this.updating = false;
     } else {

@@ -1,7 +1,7 @@
 import { Injectable, } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { ApiResponse, User } from '../interfaces/servi.interface';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,14 +24,16 @@ export class UsersService {
     return this.http.post(`http://localhost:8000/updateUser/${id}`, formData);
   }
 
-  enviarDatosDel(id: string, formData: User) {
+  enviarDatosDel(id: string) {
     if (id) {
-      console.log(id);
+      console.log('pidiendo a la api', id);
+      return this.http.post(`http://localhost:8000/deleteUser/${id}`, {});
     } else {
-      console.log('??????');
+      console.log('El ID no es válido');
+      console.log(id);
+      // Aquí podrías lanzar un error, devolver un observable de error, o manejar la situación de otra manera según tu lógica de negocio.
+      return EMPTY; // Por ejemplo, si no quieres hacer nada si el ID no es válido, puedes devolver EMPTY.
     }
-    
-    return this.http.post(`http://localhost:8000/deleteUser/${id}`, formData);
   }
 
   // Método para recibir los datos de los usuarios con paginación

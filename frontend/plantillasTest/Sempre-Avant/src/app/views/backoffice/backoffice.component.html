@@ -2,7 +2,7 @@
 
     <div class="container-fluid" style="background-color:white;">
         <div class="row">
-            <div class="col-12 col-md-6" style="background-color: lightgrey;">
+            <div class="col-12 col-md-6 py-5 d-flex align-items-center" style="background-color: lightgrey;">
                 <div class="accordion accordion-flush p-3" id="accordion" style="width:100%">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingUsers">
@@ -15,22 +15,13 @@
                             data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div (click)="selectForm(1)" class="col-3 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(1)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Insertar
                                         </button>
                                     </div>
-                                    <div (click)="selectForm(2)" class="col-3 d-flex justify-content-center boton">
-                                        <button class="btn collapsed" type="button">
-                                            Actualizar
-                                        </button>
-                                    </div>
-                                    <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
-                                        <button class="btn collapsed" type="button">
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                    <div (click)="selectForm(3)" class="col-3 d-flex justify-content-center boton">
+
+                                    <div (click)="selectForm(3)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Visualizar
                                         </button>
@@ -39,6 +30,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- grupos -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingGroups">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -50,30 +43,23 @@
                             data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div (click)="insertUser()" class="col-3 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(1)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Insertar
                                         </button>
                                     </div>
-                                    <div (click)="updateUser()" class="col-3 d-flex justify-content-center boton">
+
+                                    <div (click)="selectForm(4)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
-                                            Actualizar
-                                        </button>
-                                    </div>
-                                    <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
-                                        <button class="btn collapsed" type="button">
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                    <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
-                                        <button class="btn collapsed" type="button">
-                                            Eliminar
+                                            Visualizar
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                   <!--  Eventos -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingEvents">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -85,30 +71,23 @@
                             data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div (click)="insertUser()" class="col-3 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(1)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Insertar
                                         </button>
                                     </div>
-                                    <div (click)="updateUser()" class="col-3 d-flex justify-content-center boton">
+
+                                    <div (click)="selectForm(3)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
-                                            Actualizar
-                                        </button>
-                                    </div>
-                                    <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
-                                        <button class="btn collapsed" type="button">
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                    <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
-                                        <button class="btn collapsed" type="button">
-                                            Eliminar
+                                            Visualizar
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- participacion -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingParticipation">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -122,9 +101,9 @@
                             <div class="accordion-body">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="flush-grupoEv">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-grupoEvento-collapse" aria-expanded="false"
-                                            aria-controls="flush-grupoEvento-collapse">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-grupoEvento-collapse"
+                                            aria-expanded="false" aria-controls="flush-grupoEvento-collapse">
                                             Grupo/Evento
                                         </button>
                                     </h2>
@@ -132,22 +111,26 @@
                                         aria-labelledby="flush-grupoEv" data-bs-parent="#flush-participation">
                                         <div class="accordion-body">
                                             <div class="row">
-                                                <div (click)="insertUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="insertUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Insertar
                                                     </button>
                                                 </div>
-                                                <div (click)="updateUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="updateUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Actualizar
                                                     </button>
                                                 </div>
-                                                <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="deleteUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Eliminar
                                                     </button>
                                                 </div>
-                                                <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="deleteUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Eliminar
                                                     </button>
@@ -159,9 +142,9 @@
                                 <!-- Nuevo elemento: Asistencia -->
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="flush-asistencia">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-asistencia-collapse" aria-expanded="false"
-                                            aria-controls="flush-asistencia-collapse">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-asistencia-collapse"
+                                            aria-expanded="false" aria-controls="flush-asistencia-collapse">
                                             Asistencia
                                         </button>
                                     </h2>
@@ -169,22 +152,26 @@
                                         aria-labelledby="flush-asistencia" data-bs-parent="#flush-participation">
                                         <div class="accordion-body">
                                             <div class="row">
-                                                <div (click)="insertUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="insertUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Insertar
                                                     </button>
                                                 </div>
-                                                <div (click)="updateUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="updateUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Actualizar
                                                     </button>
                                                 </div>
-                                                <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="deleteUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Eliminar
                                                     </button>
                                                 </div>
-                                                <div (click)="deleteUser()" class="col-3 d-flex justify-content-center boton">
+                                                <div (click)="deleteUser()"
+                                                    class="col-3 d-flex justify-content-center boton">
                                                     <button class="btn collapsed" type="button">
                                                         Eliminar
                                                     </button>
@@ -199,21 +186,31 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6" style="background-color: darkgray;">
+            <div class="col-12 col-md-6 py-5" style="background-color: darkgray;">
                 @switch (condition) {
-                    @case (1) {
-                      <app-insert-user></app-insert-user>
-                    }
-                    @case (2) {
-                      <app-update-user></app-update-user>
-                    }
-                    @case (3) {
-                        <app-user-table></app-user-table>
-                      }
-                    @default {
-                      Default case.
-                    }
-                  }
+                @case (1) {
+                <app-insert-user></app-insert-user>
+                }
+                @case (2) {
+                <div class="row justify-content-center py-5" style="background-color: darkgrey;">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../../../assets/imgs/logo.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Bienvenido al panel de administración</h5>
+                        </div>
+                    </div>
+                </div>
+                }
+                @case (3) {
+                <app-user-table></app-user-table>
+                }
+                @case (4) {
+                <app-grupo-table></app-grupo-table>
+                }
+                @default {
+                Default case.
+                }
+                }
             </div>
         </div>
     </div>

@@ -115,4 +115,45 @@ class GrupoController extends AbstractController
    
         return $this->json($data);
     }
+
+    #[Route('/viewGrupos', name: 'app_listGrupos')]
+    public function listUsers(Request $request): Response
+    {
+        $grupoRepo = $this->em->getRepository(Grupo::class);
+
+        // Parámetros de paginación
+        $page = $request->query->getInt('page', 1); // Página actual, por defecto la primera página
+        $limit = $request->query->getInt('limit', 10); // Cantidad de elementos por página
+
+        // Calcula el offset
+        $offset = ($page - 1) * $limit;
+
+        // Recupera los usuarios con la paginación
+        $grupos = $grupoRepo->findBy([], [], $limit, $offset);
+
+        // Recupera el número total de usuarios
+        $totalUsers = count($grupoRepo->findAll());
+
+        // Calcula el número total de páginas
+        $totalPages = ceil($totalUsers / $limit);
+
+        // Convertir los datos a un arreglo asociativo
+        $usersArray = [];
+        foreach ($grupos as $grupo) {
+            $usersArray[] = [
+                'id' => $grupo->getId(),
+                'nombre' => $grupo->getNombre(),
+                'seccion' => $grupo->getSeccion()
+            ];
+        }
+
+        // Arreglo de respuesta
+        $responseArray = [
+            'grupos' => $usersArray,
+            'lastPage' => $totalPages
+        ];
+
+        // Devolver los datos como una respuesta JSON
+        return new JsonResponse($responseArray);
+    }
 }

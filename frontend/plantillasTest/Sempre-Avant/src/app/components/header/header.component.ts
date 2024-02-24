@@ -15,7 +15,7 @@ export class HeaderComponent {
   constructor(private router: Router) { }
 
   public rol: string | null = localStorage.getItem('rol');
-
+  public val: boolean = true;
 
   ngOnInit() {
     console.log(this.rol);
@@ -27,6 +27,10 @@ export class HeaderComponent {
     window.location.reload();
     console.log(localStorage.getItem('rol'));
 
+  }
+
+  public idioma(): void{
+    this.val = !this.val;
   }
 
 
