@@ -1,16 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-header',
+  selector: 'app-header-cast',
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  templateUrl: './header-cast.component.html',
+  styleUrl: './header-cast.component.css'
 })
-export class HeaderComponent {
-
+export class HeaderCastComponent {
 
   constructor(private router: Router) { }
 

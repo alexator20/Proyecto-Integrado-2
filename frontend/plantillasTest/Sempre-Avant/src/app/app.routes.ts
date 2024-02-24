@@ -30,6 +30,7 @@ import { AudiosComponent } from './views/audios/audios.component';
 import { PublicacionsComponent } from './views/publicacions/publicacions.component';
 import { CalendarioComponent } from './views/calendario/calendario.component';
 import { adminGuard } from './admin.guard';
+import { HeaderCastComponent } from './components/header-cast/header-cast.component';
 
 
 export const routes: Routes = [
@@ -64,7 +65,8 @@ export const routes: Routes = [
     { path: 'audios', component: AudiosComponent },
     { path: 'organizacion', component: OrganizacionComponent },
     { path: 'publicacions', component: PublicacionsComponent},
-    { path: 'calendario', component: CalendarioComponent }
+    { path: 'calendario', component: CalendarioComponent },
+    { path: 'header-cast', component: HeaderCastComponent}
 
 ];
 
