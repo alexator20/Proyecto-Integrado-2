@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { UsersService } from '../../services/users.service';
-import { ApiResponse, User } from '../../interfaces/servi.interface';
+import { ApiResponse, User, UserIdIncluded } from '../../interfaces/servi.interface';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -16,12 +16,21 @@ export class UserTableComponent {
 
 
   public users: User[] = [];
+  public usTest: UserIdIncluded[] = [];
   public currentPage = 1;
   public pageSize = 10;
   public totalPages = 1;
   public updating = false;
 
+  public id: string = '';
+  public grupo_perteneciente_id!: string;
+  public nombre!: string;
+  public edad: number = 0;
+  public rol: string = '';
+  public password: string = '';
+
   reactiveForm = new FormGroup({
+    id: new FormControl(''),
     grupo_perteneciente_id: new FormControl(''),
     nombre: new FormControl(''),
     edad: new FormControl(''),
@@ -30,7 +39,7 @@ export class UserTableComponent {
   });
 
   constructor(private formularioService: UsersService) { }
- 
+
   ngOnInit(): void {
     this.fetchUsterst(this.currentPage, this.pageSize);
   }
@@ -54,11 +63,40 @@ export class UserTableComponent {
   }
 
   public onClick(index: number): void {
-    if (this.updating==true) {
+    if (this.updating == true) {
       this.updating = false;
+      /* console.log('Updating', this.users[index]);
+      this.userData(index);
+      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('nombre', this.nombre);
+      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('gr ID', this.grupo_perteneciente_id); */
     } else {
       this.updating = true;
+      console.log('Updating', this.users[index].id);
+      this.id = this.users[index].id!;
+      this.userData(index);
+      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('nombre', this.nombre);
+      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('gr ID', this.grupo_perteneciente_id);
     }
+  }
+
+  userData(index: number): void {
+    const user = this.users[index];
+    if (user) {
+      this.reactiveForm.patchValue({
+        grupo_perteneciente_id: user.grupo_perteneciente_id!,
+        nombre: user.nombre!,
+        edad: user.edad!,
+        rol: user.rol!,
+        password: user.password!
+      });
+      this.id = this.usTest[index].id!;
+    } 
   }
 
   onPageChange(page: number): void {
@@ -81,34 +119,58 @@ export class UserTableComponent {
     }
   }
 
-  onSubmit(): void {
-  }
-/*
-  fetchUsers() {
-    alert('caca');
-    /*
-    this.formularioService.recibirDatosUsers()
+  onSubmit() {
+    const userData: User = {
+      id: this.reactiveForm.value.id !== undefined ? this.reactiveForm.value.id : null,
+      grupo_perteneciente_id: this.reactiveForm.value.grupo_perteneciente_id !== undefined ? this.reactiveForm.value.grupo_perteneciente_id : null,
+      nombre: this.reactiveForm.value.nombre !== undefined ? this.reactiveForm.value.nombre : null,
+      edad: this.reactiveForm.value.edad !== undefined ? this.reactiveForm.value.edad : null,
+      rol: this.reactiveForm.value.rol !== undefined ? this.reactiveForm.value.rol : null,
+      password: this.reactiveForm.value.password !== undefined ? this.reactiveForm.value.password : null
+    };
+
+    console.log(this.id);
+    this.formularioService.enviarDatosUpdate(this.id, userData)
       .pipe(
         tap({
-          
           next: response => {
-            alert('entra');
             console.log('Respuesta del servidor:', response);
             // Puedes hacer algo con la respuesta si lo necesitas
           },
           error: error => {
-            alert('no entra');
             console.error('Error al enviar los datos:', error);
           }
         })
       )
       .subscribe();
-      */
-   /* this.formularioService.recibirDatosUsers().subscribe(response => {
-      console.log(response);
-      this.users = response;
-    })
+    alert('Inserción realizada correctamente')
   }
+  /*
+    fetchUsers() {
+      alert('caca');
+      /*
+      this.formularioService.recibirDatosUsers()
+        .pipe(
+          tap({
+            
+            next: response => {
+              alert('entra');
+              console.log('Respuesta del servidor:', response);
+              // Puedes hacer algo con la respuesta si lo necesitas
+            },
+            error: error => {
+              alert('no entra');
+              console.error('Error al enviar los datos:', error);
+            }
+          })
+        )
+        .subscribe();
+        */
+  /* this.formularioService.recibirDatosUsers().subscribe(response => {
+     console.log(response);
+     this.users = response;
+   })
+ }
 
-  */
+ */
 }

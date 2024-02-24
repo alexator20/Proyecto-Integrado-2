@@ -13,8 +13,9 @@ import { User } from '../../interfaces/servi.interface';
   styleUrl: './update-user.component.css'
 })
 export class UpdateUserComponent {
-  public id: number = 0;
+  public id: string = '';
   reactiveForm = new FormGroup({
+    id: new FormControl(''),
     grupo_perteneciente_id: new FormControl(''),
     nombre: new FormControl(''),
     edad: new FormControl(''),
@@ -26,6 +27,7 @@ export class UpdateUserComponent {
 
   onSubmit() {
     const userData: User = {
+      id: this.reactiveForm.value.id !== undefined ? this.reactiveForm.value.id : null,
       grupo_perteneciente_id: this.reactiveForm.value.grupo_perteneciente_id !== undefined ? this.reactiveForm.value.grupo_perteneciente_id : null,
       nombre: this.reactiveForm.value.nombre !== undefined ? this.reactiveForm.value.nombre : null,
       edad: this.reactiveForm.value.edad !== undefined ? this.reactiveForm.value.edad : null,

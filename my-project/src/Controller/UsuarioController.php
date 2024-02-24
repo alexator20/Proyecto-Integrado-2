@@ -78,7 +78,8 @@ class UsuarioController extends AbstractController
             $nuevo->setGrupoPerteneciente($grupo);
             $nuevo->setEdad($edad);
             $nuevo->setRol($rol);
-            $nuevo->setPassword($pass);
+            $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+            $nuevo->setPassword($hashedPassword);
 
             // Persistencia
             $this->em->persist($nuevo);
@@ -110,7 +111,8 @@ class UsuarioController extends AbstractController
             }
 
             // Obtener el objeto Grupo correspondiente al ID del grupo
-            $grupo = $this->em->getRepository(Grupo::class)->find($grupoId);
+            $grupo = $this->em->getRepository(Grupo::class)->findOneBy(array('nombre' => $recibe['grupo_perteneciente_id']));
+
 
             if (!$grupo) {
                 throw new \Exception('El grupo especificado no existe.');
