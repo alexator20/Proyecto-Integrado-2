@@ -1,4 +1,4 @@
-@if (users.length > 0 && updating == false) {
+@if (users.length > 0 && updating == true) {
 <table class="table">
     <thead>
         <tr>
@@ -19,8 +19,10 @@
             <td>{{ item.edad }}</td>
             <td>{{ item.rol }}</td>
             <td>{{ item.grupo_perteneciente_id }}</td>
-            <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/actualizar.png" alt="personita login" style="margin-right: 2vh; height: 5vh;"> </td>
-            <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/delete.png" alt="personita login" style="margin-right: 2vh; height: 4vh;"> </td>
+            <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/actualizar.png" alt="personita login"
+                    style="margin-right: 2vh; height: 5vh;"> </td>
+            <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/delete.png" alt="personita login"
+                    style="margin-right: 2vh; height: 4vh;"> </td>
         </tr>
         }
     </tbody>
@@ -31,10 +33,10 @@
     <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
 </div>
 }
-@if (users.length <=0 && updating==false) { <h2> Los datos se están cargando y esto puede tomar un buen rato </h2>
+@if (users.length <=0 && updating==true) { <h2> Los datos se están cargando y esto puede tomar un buen rato </h2>
     }
 
-    @if (updating == true){
+    @if (updating == false){
     <aside>
 
         <div class="row justify-content-center" style="background-color: darkgrey;">
@@ -59,7 +61,8 @@
                                                         formControlName="grupo_perteneciente_id" type="text"
                                                         class="form-control"
                                                         aria-describedby="grupo_perteneciente_idHelp">
-                                                    <div id="grupo_perteneciente_idHelp" class="form-text">ID del grupo
+                                                    <div id="grupo_perteneciente_idHelp" class="form-text">Nombre del
+                                                        grupo
                                                         al que pertenece el usuario.
                                                     </div>
                                                 </div>
@@ -93,7 +96,7 @@
 
                                             <div class="row justify-content-center">
                                                 <div class="mb-3 col-12">
-                                                    <label for="password" class="form-label">Password</label>
+                                                    <label for="password" class="form-label">Contraseña</label>
                                                     <input style="border: 2px solid #904cb4 !important;" id="password"
                                                         formControlName="password" type="password" class="form-control"
                                                         id="password">

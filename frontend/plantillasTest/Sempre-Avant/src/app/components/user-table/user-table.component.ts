@@ -20,7 +20,9 @@ export class UserTableComponent {
   public currentPage = 1;
   public pageSize = 10;
   public totalPages = 1;
-  public updating = false;
+
+  public visualizando: boolean = false;
+  public updating: boolean = true;
 
   public id: string = '';
   public grupo_perteneciente_id!: string;
@@ -44,38 +46,39 @@ export class UserTableComponent {
     this.fetchUsterst(this.currentPage, this.pageSize);
   }
 
-  fetchUsterst(page: number, limit: number): void {
-
-    this.formularioService.recibirDatosUsers(this.currentPage, this.pageSize).subscribe(
-      (response: ApiResponse) => {
-        if (response) {
-          console.log('Respuesta del servidor:', response);
-          this.users = response.users;
-          this.totalPages = response.lastPage;
-        } else {
-          console.log('No hay respuesta');
-        }
-      },
-      error => {
-        console.error('Error al recibir los datos:', error);
+  async fetchUsterst(page: number, limit: number): Promise<void> {
+    try {
+      const response: ApiResponse | undefined = await this.formularioService.recibirDatosUsers(this.currentPage, this.pageSize).toPromise();
+      if (response !== undefined) {
+        console.log('Respuesta del servidor:', response);
+        this.users = response.users;
+        this.totalPages = response.lastPage;
+      } else {
+        console.log('No hay respuesta');
       }
-    );
+    } catch (error) {
+      console.error('Error al recibir los datos:', error);
+    }
   }
 
   public onClick(index: number): void {
     if (this.updating == true) {
+
+
+
       this.updating = false;
-      /* console.log('Updating', this.users[index]);
+      console.log('Updating', this.users[index].id);
+      this.id = this.users[index].id!;
       this.userData(index);
       console.log('gr ID', this.grupo_perteneciente_id);
       console.log('nombre', this.nombre);
       console.log('gr ID', this.grupo_perteneciente_id);
       console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('gr ID', this.grupo_perteneciente_id); */
+      console.log('gr ID', this.grupo_perteneciente_id);
+
     } else {
       this.updating = true;
-      console.log('Updating', this.users[index].id);
-      this.id = this.users[index].id!;
+      console.log('Updating', this.users[index]);
       this.userData(index);
       console.log('gr ID', this.grupo_perteneciente_id);
       console.log('nombre', this.nombre);
@@ -96,7 +99,7 @@ export class UserTableComponent {
         password: user.password!
       });
       this.id = this.usTest[index].id!;
-    } 
+    }
   }
 
   onPageChange(page: number): void {
@@ -119,7 +122,7 @@ export class UserTableComponent {
     }
   }
 
-  onSubmit() {
+  async onSubmit() {
     const userData: User = {
       id: this.reactiveForm.value.id !== undefined ? this.reactiveForm.value.id : null,
       grupo_perteneciente_id: this.reactiveForm.value.grupo_perteneciente_id !== undefined ? this.reactiveForm.value.grupo_perteneciente_id : null,
@@ -142,8 +145,16 @@ export class UserTableComponent {
           }
         })
       )
-      .subscribe();
-    alert('Inserción realizada correctamente')
+      .subscribe()
+    alert('Inserción realizada correctamente. Los cambios pueden tardar en verse')
+    await this.fetchUsterst(this.currentPage, this.pageSize);
+    if (this.updating == true) {
+      this.updating = false;
+    } else {
+      this.updating = true;
+    }
+   
+
   }
   /*
     fetchUsers() {

@@ -123,7 +123,8 @@ class UsuarioController extends AbstractController
             $usuario->setGrupoPerteneciente($grupo);
             $usuario->setEdad($edad);
             $usuario->setRol($rol);
-            $usuario->setPassword($pass);
+            $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+            $usuario->setPassword($hashedPassword);
 
             // Persistencia de los cambios
             $this->em->flush();
@@ -134,6 +135,28 @@ class UsuarioController extends AbstractController
         }
     }
 
+    #[Route('/deleteUser/{id}', name: 'app_del')]
+    public function delUser(Request $request, $id): JsonResponse
+    {
+        $recibe = json_decode($request->getContent(), true);
+        $id = $recibe['id'];
+        //
+        try {
+            // Obtener el usuario existente por su ID
+            $usuario = $this->em->getRepository(Usuario::class)->find($id);
+
+            if (!$usuario) {
+                throw new \Exception('El usuario especificado no existe.');
+            }
+            $this->em->remove($usuario);
+            // Persistencia de los cambios
+            $this->em->flush();
+
+            return new JsonResponse(['message' => 'Usuario actualizado correctamente.'], JsonResponse::HTTP_OK);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
+        }
+    }
 
     /* #[Route('/viewUsers', name: 'app_listUsers')]
     public function listUsers(): Response
