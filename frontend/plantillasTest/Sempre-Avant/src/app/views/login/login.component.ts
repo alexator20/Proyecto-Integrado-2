@@ -23,6 +23,7 @@ export class LoginComponent {
     password: new FormControl('')
   });
   public rol:string="";
+  public error:string="";
   
 
   constructor(public formularioService: LoginService, private router: Router) { }
@@ -41,15 +42,22 @@ export class LoginComponent {
             console.log('Respuesta del servidor:', response);
             // Puedes hacer algo con la respuesta si lo necesitas
            if(Array.isArray(response) && response.length>0){
-            this.rol=response[0].rol;
-            console.log(this.rol);
-            localStorage.setItem('rol',this.rol);
-            const nuevaventana=window.open("http://localhost:4200");
-            /*
-            nuevaventana.onload=()=>{
-              nuevaventana?.location.reload();
-            }*/
-            this.router.navigate(['/home']);
+            if(response[0].message=="este no es su contraseña"){
+              this.error="error";
+
+            }else{
+              this.rol=response[0].rol;
+              console.log(this.rol);
+              this.error="";
+              localStorage.setItem('rol',this.rol);
+              const nuevaventana=window.open("http://localhost:4200");
+              /*
+              nuevaventana.onload=()=>{
+                nuevaventana?.location.reload();
+              }*/
+              this.router.navigate(['/home']);
+            }
+        
 
            }
           },

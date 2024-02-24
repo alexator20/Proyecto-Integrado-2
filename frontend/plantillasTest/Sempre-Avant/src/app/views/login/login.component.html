@@ -34,7 +34,16 @@
                                                     class="form-control" id="exampleInputPassword1">
                                             </div>
                                         </div>
-    
+                                        @if(error=="error"){
+                                            <div class="row justify-content-center">
+                                                <div class="mb-3 col-12">
+                                                    <p style="background-color: red;
+                                                    background-clip: text;
+                                                    color: transparent;">Error en la contraseña </p>
+                                                </div>
+                                            </div>
+                                        }
+
                                         <div class="row">
                                             <div class="mb-3 col-9 col-md-3">
                                                 <button type="submit" class="btn">Submit</button>

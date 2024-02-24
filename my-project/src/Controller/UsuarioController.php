@@ -261,7 +261,11 @@ class UsuarioController extends AbstractController
 
                 return $this->json($data);
             } else {
-                return new JsonResponse(['message' => 'este no es su contraseña'], 200);
+                $data[]=[
+                    'message' => 'este no es su contraseña',
+                ];
+                
+                return $this->json($data);
             }
         } else {
             return new JsonResponse(['message' => 'este usuario no existe'], 200);
