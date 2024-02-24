@@ -6,7 +6,8 @@
             <th scope="col">Edad</th>
             <th scope="col">Rol</th>
             <th scope="col">Grupo</th>
-            <th scope="col">Updates</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
             <!-- Agrega más columnas según los datos que devuelva tu API -->
         </tr>
     </thead>
@@ -18,7 +19,8 @@
             <td>{{ item.edad }}</td>
             <td>{{ item.rol }}</td>
             <td>{{ item.grupo_perteneciente_id }}</td>
-            <td (click)="onClick(i)"> {{i+1}} </td>
+            <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/actualizar.png" alt="personita login" style="margin-right: 2vh; height: 5vh;"> </td>
+            <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/delete.png" alt="personita login" style="margin-right: 2vh; height: 4vh;"> </td>
         </tr>
         }
     </tbody>
