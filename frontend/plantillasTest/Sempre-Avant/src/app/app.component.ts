@@ -17,8 +17,8 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 })
 export class AppComponent {
   title = 'Sempre-Avant';
-  public test: boolean = true;
-
+  public test: boolean = false;
+  // se necesita la logica para cambiar el boolean a verdadero
   }
 
    
