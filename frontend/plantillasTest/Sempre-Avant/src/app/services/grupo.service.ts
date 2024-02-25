@@ -11,8 +11,6 @@ export class GrupoService {
 
   constructor(public http: HttpClient) { }
 
-  //esto está copiado del user hay que arreglarlo
-  // Método para recibir los datos de los usuarios con paginación
   recibirDatosGrupos(page: number, pageSize: number): Observable<ApiResponseTest> {
     const params = new HttpParams()
       .set('page', page.toString())
@@ -21,7 +19,7 @@ export class GrupoService {
     return this.http.get<ApiResponseTest>('http://localhost:8000/viewGrupos', { params });
   }
 
-  //esto está copiado del user hay que arreglarlo
+
   enviarDatosDel(id: string) {
     if (id) {
       console.log('pidiendo a la api', id);
@@ -34,8 +32,12 @@ export class GrupoService {
     }
   }
 
+    //esto está copiado del user hay que arreglarlo
+  enviarDatosInsert(formData: Grupo) {
+    return this.http.post('http://localhost:8000/insertGrupo', formData);
+  }
 
-  //esto está copiado del user hay que arreglarlo
+
   enviarDatosUpdate(id: string, formData: Grupo) {
     if (id) {
       console.log(id);

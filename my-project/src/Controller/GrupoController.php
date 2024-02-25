@@ -207,4 +207,28 @@ class GrupoController extends AbstractController
             return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
         }
     }
+
+    #[Route('/insertGrupo', name: 'app_insertGr')]
+    public function add(Request $request): JsonResponse
+    {
+        $recibe = json_decode($request->getContent(), true);
+
+        $nombre = $recibe['nombre'];
+        $seccion = $recibe['seccion'];
+
+        try {
+            
+
+            $nuevo = new Grupo();
+            $nuevo->setNombre($nombre);
+            $nuevo->setSeccion($seccion);
+            // Persistencia
+            $this->em->persist($nuevo);
+            $this->em->flush();
+
+            return new JsonResponse(['message' => 'Grupo creado correctamente.'], JsonResponse::HTTP_CREATED);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
+        }
+    }
 }

@@ -5,12 +5,13 @@ import { InsertUserComponent } from '../../components/insert-user/insert-user.co
 import { UserTableComponent } from '../../components/user-table/user-table.component';
 import { UpdateUserComponent } from '../../components/update-user/update-user.component';
 import { GrupoTableComponent } from '../../components/grupo-table/grupo-table.component';
+import { InsertGrupoComponent } from '../../components/insert-grupo/insert-grupo.component';
 
 
 @Component({
   selector: 'app-backoffice',
   standalone: true,
-  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent, UserTableComponent, UpdateUserComponent, GrupoTableComponent],
+  imports: [LoginComponent,TestearFormuComponent, InsertUserComponent, UserTableComponent, UpdateUserComponent, GrupoTableComponent, InsertGrupoComponent],
   templateUrl: './backoffice.component.html',
   styleUrl: './backoffice.component.css'
 })

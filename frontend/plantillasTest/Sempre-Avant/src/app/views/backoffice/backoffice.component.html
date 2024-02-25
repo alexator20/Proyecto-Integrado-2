@@ -43,7 +43,7 @@
                             data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div (click)="selectForm(1)" class="col-6 d-flex justify-content-center boton">
+                                    <div (click)="selectForm(5)" class="col-6 d-flex justify-content-center boton">
                                         <button class="btn collapsed" type="button">
                                             Insertar
                                         </button>
@@ -206,6 +206,9 @@
                 }
                 @case (4) {
                 <app-grupo-table></app-grupo-table>
+                }
+                @case(5){
+                    <app-insert-grupo></app-insert-grupo>
                 }
                 @default {
                 Default case.

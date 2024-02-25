@@ -1,0 +1,57 @@
+<aside>
+
+    <div class="row justify-content-center" style="background-color: darkgrey;">
+        <div class="py-5 d-flex justify-content-center" style="background-color: darkgrey;">
+            <div class="card" style="width: 18rem;">
+                <img src="../../../assets/imgs/logo.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Inserción de grupos</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7">
+            <div class="container-fluid py-5">
+                <div class="container" style="background-color: white; border: 1px solid white; border-radius: 7px;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <!-- form -->
+                                <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+                                    <div class="container col-12 col-md-7 justify-content-center">
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="nombre" class="form-label">Nombre</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="nombre"
+                                                    formControlName="nombre" type="text" class="form-control"
+                                                    aria-describedby="nombreHelp">
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-center">
+                                            <div class="mb-3 col-12">
+                                                <label for="seccion" class="form-label">Seccion</label>
+                                                <input style="border: 2px solid #904cb4 !important;" id="seccion"
+                                                    formControlName="seccion" type="text" class="form-control"
+                                                    id="seccion" value="{{seccion}}">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="mb-3 col-9 col-md-3">
+                                                <button type="submit" class="btn">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- form -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</aside>
