@@ -1,5 +1,4 @@
 
-
 img{
     margin-left: auto;
     margin-right: auto;
@@ -54,4 +53,9 @@ img{
     .textoP, .titCard {
         font-size: smaller; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
     }
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
