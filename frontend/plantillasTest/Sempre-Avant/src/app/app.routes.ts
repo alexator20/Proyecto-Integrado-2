@@ -31,6 +31,7 @@ import { PublicacionsComponent } from './views/publicacions/publicacions.compone
 import { CalendarioComponent } from './views/calendario/calendario.component';
 import { adminGuard } from './admin.guard';
 import { HeaderCastComponent } from './components/header-cast/header-cast.component';
+import { NostrahistoriaComponent } from './views/nostrahistoria/nostrahistoria.component';
 
 
 export const routes: Routes = [
@@ -66,7 +67,8 @@ export const routes: Routes = [
     { path: 'organizacion', component: OrganizacionComponent },
     { path: 'publicacions', component: PublicacionsComponent},
     { path: 'calendario', component: CalendarioComponent },
-    { path: 'header-cast', component: HeaderCastComponent}
+    { path: 'header-cast', component: HeaderCastComponent},
+    {path: 'nostrahistoria', component: NostrahistoriaComponent}
 
 ];
 
