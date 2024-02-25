@@ -30,7 +30,6 @@ import { AudiosComponent } from './views/audios/audios.component';
 import { PublicacionsComponent } from './views/publicacions/publicacions.component';
 import { CalendarioComponent } from './views/calendario/calendario.component';
 import { adminGuard } from './admin.guard';
-import { HeaderCastComponent } from './components/header-cast/header-cast.component';
 import { NostrahistoriaComponent } from './views/nostrahistoria/nostrahistoria.component';
 import { EscultismoComponent } from './views/escultismo/escultismo.component';
 import {EscultismoCastComponent} from './views/escultismo-cast/escultismo-cast.component';
@@ -69,7 +68,6 @@ export const routes: Routes = [
     { path: 'organizacion', component: OrganizacionComponent },
     { path: 'publicacions', component: PublicacionsComponent},
     { path: 'calendario', component: CalendarioComponent },
-    { path: 'header-cast', component: HeaderCastComponent},
     {path: 'nostrahistoria', component: NostrahistoriaComponent},
     {path: 'escultismo', component: EscultismoComponent},
     {path: 'escultismo-cast', component: EscultismoCastComponent}
