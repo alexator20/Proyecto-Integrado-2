@@ -86,15 +86,15 @@ export class GrupoTableComponent {
     console.log('deleting', this.grupos[index].id);
     try {
       await this.formularioService.enviarDatosDel(this.grupos[index].id!).toPromise();
-      console.log('Usuario eliminado correctamente.');
-      alert('Usuario eliminado correctamente. Los cambios pueden tardar en verse relfejados');
+      console.log('Grupo eliminado correctamente.');
+      alert('Grupo eliminado correctamente. Los cambios pueden tardar en verse relfejados');
       // Actualizar la tabla después de eliminar el usuario
       await this.fetchUsterst(this.currentPage, this.pageSize);
 
       // Cambiar el estado de 'updating'
       //this.updating = !this.updating;
   } catch (error) {
-      console.error('Error al eliminar el usuario:', error);
+      console.error('Error al eliminar el grupo:', error);
   }
   }
 

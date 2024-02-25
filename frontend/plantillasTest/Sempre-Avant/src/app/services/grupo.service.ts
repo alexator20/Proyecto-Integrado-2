@@ -25,7 +25,7 @@ export class GrupoService {
   enviarDatosDel(id: string) {
     if (id) {
       console.log('pidiendo a la api', id);
-      return this.http.post(`http://localhost:8000/deleteUser/${id}`, {});
+      return this.http.post(`http://localhost:8000/deleteGroup/${id}`, {});
     } else {
       console.log('El ID no es válido');
       console.log(id);
@@ -43,6 +43,6 @@ export class GrupoService {
       console.log('??????');
     }
 
-    return this.http.post(`http://localhost:8000/updateUser/${id}`, formData);
+    return this.http.post(`http://localhost:8000/updateGroup/${id}`, formData);
   }
 }

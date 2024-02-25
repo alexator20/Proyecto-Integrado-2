@@ -156,4 +156,55 @@ class GrupoController extends AbstractController
         // Devolver los datos como una respuesta JSON
         return new JsonResponse($responseArray);
     }
+
+    #[Route('/deleteGroup/{id}', name: 'app_delGr')]
+    public function delUser(Request $request, $id): JsonResponse
+    {
+        //
+        try {
+            // Obtener el usuario existente por su ID
+            $usuario = $this->em->getRepository(Grupo::class)->find($id);
+
+            if (!$usuario) {
+                throw new \Exception('El grupo especificado no existe.');
+            }
+            $this->em->remove($usuario);
+            // Persistencia de los cambios
+            $this->em->flush();
+
+            return new JsonResponse(['message' => 'Grupo actualizado correctamente.'], JsonResponse::HTTP_OK);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
+        }
+    }
+
+    #[Route('/updateGroup/{id}', name: 'app_updateGr')]
+    public function update(Request $request, $id): JsonResponse
+    {
+        $recibe = json_decode($request->getContent(), true);
+
+        $nombre = $recibe['nombre'];
+        $seccion = $recibe['seccion'];
+
+        try {
+            // Obtener el usuario existente por su ID
+            $grupo = $this->em->getRepository(Grupo::class)->find($id);
+
+
+            if (!$grupo) {
+                throw new \Exception('El grupo especificado no existe.');
+            }
+
+            // Actualizar los campos del usuario
+            $grupo->setNombre($nombre);
+            $grupo->getSeccion($grupo);
+
+            // Persistencia de los cambios
+            $this->em->flush();
+
+            return new JsonResponse(['message' => 'Usuario actualizado correctamente.'], JsonResponse::HTTP_OK);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => $e->getMessage()], JsonResponse::HTTP_BAD_REQUEST);
+        }
+    }
 }

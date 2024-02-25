@@ -15,9 +15,9 @@
             <tr>
                 <td>{{ item.nombre }}</td>
                 <td>{{ item.seccion }}</td>
-                <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/actualizar.png" alt="personita login"
+                <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/actualizar.png" alt="icono editar"
                         style="margin-right: 2vh; height: 5vh;"> </td>
-                <td (click)="clickDelete(i)"> <img class="icons" src="../../../assets/imgs/delete.png" alt="personita login"
+                <td (click)="clickDelete(i)"> <img class="icons" src="../../../assets/imgs/delete.png" alt="icono borrar"
                         style="margin-right: 2vh; height: 4vh;"> </td>
             </tr>
             }
@@ -45,59 +45,29 @@
                                     <div class="col-12">
     
                                         <!-- form -->
-                                        <h3>Formulario de actualización de usuarios</h3>
+                                        <h3>Formulario de actualización de Grupos</h3>
                                         <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
                                             <div class="container col-12 col-md-7 justify-content-center">
                                                 <div class="row justify-content-center">
                                                     <div class="mb-3 col-12">
-                                                        <label for="grupo_perteneciente_id" class="form-label">Grupo
-                                                            Perteneciente ID</label>
-                                                        <input style="border: 2px solid #904cb4 !important;"
-                                                            id="grupo_perteneciente_id"
-                                                            formControlName="grupo_perteneciente_id" type="text"
-                                                            class="form-control"
-                                                            aria-describedby="grupo_perteneciente_idHelp">
-                                                        <div id="grupo_perteneciente_idHelp" class="form-text">Nombre del
-                                                            grupo
-                                                            al que pertenece el usuario.
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="row justify-content-center">
-                                                    <div class="mb-3 col-12">
                                                         <label for="nombre" class="form-label">Nombre</label>
-                                                        <input style="border: 2px solid #904cb4 !important;" id="nombre"
-                                                            formControlName="nombre" type="text" class="form-control"
-                                                            id="nombre" value="{{nombre}}">
+                                                        <input style="border: 2px solid #904cb4 !important;"
+                                                            id="nombre"
+                                                            formControlName="nombre" type="text"
+                                                            class="form-control"
+                                                            aria-describedby="nombreHelp">
                                                     </div>
                                                 </div>
     
                                                 <div class="row justify-content-center">
                                                     <div class="mb-3 col-12">
-                                                        <label for="edad" class="form-label">Edad</label>
-                                                        <input style="border: 2px solid #904cb4 !important;" id="edad"
-                                                            formControlName="edad" type="number" class="form-control"
-                                                            id="edad">
+                                                        <label for="seccion" class="form-label">Seccion</label>
+                                                        <input style="border: 2px solid #904cb4 !important;" id="seccion"
+                                                            formControlName="seccion" type="text" class="form-control"
+                                                            id="seccion" value="{{seccion}}">
                                                     </div>
                                                 </div>
     
-                                                <div class="row justify-content-center">
-                                                    <div class="mb-3 col-12">
-                                                        <label for="rol" class="form-label">Rol</label>
-                                                        <input style="border: 2px solid #904cb4 !important;" id="rol"
-                                                            formControlName="rol" type="text" class="form-control" id="rol">
-                                                    </div>
-                                                </div>
-    
-                                                <div class="row justify-content-center">
-                                                    <div class="mb-3 col-12">
-                                                        <label for="password" class="form-label">Contraseña</label>
-                                                        <input style="border: 2px solid #904cb4 !important;" id="password"
-                                                            formControlName="password" type="password" class="form-control"
-                                                            id="password">
-                                                    </div>
-                                                </div>
     
                                                 <div class="row">
                                                     <div class="mb-3 col-9 col-md-3">
