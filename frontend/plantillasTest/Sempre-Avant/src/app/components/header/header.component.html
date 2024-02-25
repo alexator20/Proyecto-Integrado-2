@@ -159,11 +159,10 @@
                         </li>
                         }
                     </ul>
-                    @if(rol == ""){
-                    <a routerLink="/login" routerLinkActive="active"><img class="icons" src="../../../assets/imgs/login.png"
-                            alt="personita login" style="margin-right: 2vh;"></a>
+                    @if(rol != null && rol != ""){
+                        <button (click)="logout()">Logout</button>
                     }@else{
-                    <button (click)="logout()">Logout</button>
+                        <a routerLink="/login" routerLinkActive="active"><img class="icons" src="../../../assets/imgs/login.png" alt="personita login" style="margin-right: 2vh;"></a>
                     }
                     <a (click)="idioma()" routerLink="/home" routerLinkActive="active"><img class="icon"
                             src="../../../assets/imgs/idio_vlc.png" alt="bandera valenciana"></a>
