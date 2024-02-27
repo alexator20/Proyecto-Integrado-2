@@ -307,7 +307,7 @@ class UsuarioController extends AbstractController
         $product = $entityManager->getRepository(Grupo::class)->find(4);
         $project->setPassword($hashedPassword);
         $project->setEdad(28);
-        $project->setRol("usuario");
+        $project->setRol("admin");
         $project->setGrupoPerteneciente($product);
         $entityManager->persist($project);
         $entityManager->flush();
