@@ -32,7 +32,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $data = $request->validate([
-            'email' => ['required', 'string', 'email', 'max:255', 'exists:users'],
+            'name' => ['required', 'string', 'max:255', 'exists:users'],
             'password' => ['required', 'string', 'min:6'],
         ]);
 

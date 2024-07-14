@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::post('/api/register', [AuthController::class, 'register']);
 Route::post('/api/login', [AuthController::class, 'login']);
 Route::post('/api/test', [AuthController::class, 'test']);
+Route::post('/apiUser', [AuthController::class, 'login']);
