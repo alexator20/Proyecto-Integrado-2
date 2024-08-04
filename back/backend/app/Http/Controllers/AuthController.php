@@ -36,7 +36,7 @@ class AuthController extends Controller
             'password' => ['required', 'string', 'min:6'],
         ]);
 
-        $user = User::where('email', $data['email'])->first();
+        $user = User::where('name', $data['name'])->first();
 
         if (!$user || !Hash::check($data['password'], $user->password)) {
             return response()->json([

@@ -22,6 +22,11 @@ export interface ApiResponse {
 }
 
 export interface Login {
-    nombre: string | null;
+    name: string | null;
     password: string | null;
+}
+
+export interface LoginResponse {
+    user: User,
+    token: string
 }
