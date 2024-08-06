@@ -1,6 +1,6 @@
 import { Injectable, } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { ApiResponse, User } from '../interfaces/servi.interface';
+import { User } from '../interfaces/servi.interface';
 import { Observable, EMPTY } from 'rxjs';
 
 @Injectable({
@@ -37,12 +37,10 @@ export class UsersService {
   }
 
   // Método para recibir los datos de los usuarios con paginación
-  recibirDatosUsers(page: number, pageSize: number): Observable<ApiResponse> {
-    const params = new HttpParams()
-      .set('page', page.toString())
-      .set('pageSize', pageSize.toString());
+  recibirDatosUsers(): Observable<User[]> {
+    
 
-    return this.http.get<ApiResponse>('http://localhost:8000/viewUsers', { params });
+    return this.http.get<User[]>('http://localhost:8000/api/users');
   }
 
 }

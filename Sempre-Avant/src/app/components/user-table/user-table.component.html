@@ -2,7 +2,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Nombre</th>
+            <th scope="col">name</th>
             <th scope="col">Edad</th>
             <th scope="col">Rol</th>
             <th scope="col">Grupo</th>
@@ -15,10 +15,10 @@
 
         @for (item of users; track item; let i = $index) {
         <tr>
-            <td>{{ item.nombre }}</td>
+            <td>{{ item.name }}</td>
             <td>{{ item.edad }}</td>
             <td>{{ item.rol }}</td>
-            <td>{{ item.grupo_perteneciente_id }}</td>
+            <td>{{ item.group_id }}</td>
             <td (click)="onClick(i)"> <img class="icons" src="../../../assets/imgs/actualizar.png" alt="personita login"
                     style="margin-right: 2vh; height: 5vh;"> </td>
             <td (click)="clickDelete(i)"> <img class="icons" src="../../../assets/imgs/delete.png" alt="personita login"
@@ -54,14 +54,14 @@
                                         <div class="container col-12 col-md-7 justify-content-center">
                                             <div class="row justify-content-center">
                                                 <div class="mb-3 col-12">
-                                                    <label for="grupo_perteneciente_id" class="form-label">Grupo
+                                                    <label for="group_id" class="form-label">Grupo
                                                         Perteneciente ID</label>
                                                     <input style="border: 2px solid #904cb4 !important;"
-                                                        id="grupo_perteneciente_id"
-                                                        formControlName="grupo_perteneciente_id" type="text"
+                                                        id="group_id"
+                                                        formControlName="group_id" type="text"
                                                         class="form-control"
-                                                        aria-describedby="grupo_perteneciente_idHelp">
-                                                    <div id="grupo_perteneciente_idHelp" class="form-text">Nombre del
+                                                        aria-describedby="group_idHelp">
+                                                    <div id="group_idHelp" class="form-text">name del
                                                         grupo
                                                         al que pertenece el usuario.
                                                     </div>
@@ -70,10 +70,10 @@
 
                                             <div class="row justify-content-center">
                                                 <div class="mb-3 col-12">
-                                                    <label for="nombre" class="form-label">Nombre</label>
-                                                    <input style="border: 2px solid #904cb4 !important;" id="nombre"
-                                                        formControlName="nombre" type="text" class="form-control"
-                                                        id="nombre" value="{{nombre}}">
+                                                    <label for="name" class="form-label">name</label>
+                                                    <input style="border: 2px solid #904cb4 !important;" id="name"
+                                                        formControlName="name" type="text" class="form-control"
+                                                        id="name" value="{{name}}">
                                                 </div>
                                             </div>
 

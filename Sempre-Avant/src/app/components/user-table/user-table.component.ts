@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { UsersService } from '../../services/users.service';
-import { ApiResponse, User, UserIdIncluded } from '../../interfaces/servi.interface';
+import { User, UserIdIncluded } from '../../interfaces/servi.interface';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -25,16 +25,16 @@ export class UserTableComponent {
   public updating: boolean = true;
 
   public id: string = '';
-  public grupo_perteneciente_id!: string;
-  public nombre!: string;
+  public group_id!: string;
+  public name!: string;
   public edad: number = 0;
   public rol: string = '';
   public password: string = '';
 
   reactiveForm = new FormGroup({
     id: new FormControl(''),
-    grupo_perteneciente_id: new FormControl(''),
-    nombre: new FormControl(''),
+    group_id: new FormControl(''),
+    name: new FormControl(''),
     edad: new FormControl(''),
     rol: new FormControl(''),
     password: new FormControl('')
@@ -48,11 +48,12 @@ export class UserTableComponent {
 
   async fetchUsterst(page: number, limit: number): Promise<void> {
     try {
-      const response: ApiResponse | undefined = await this.formularioService.recibirDatosUsers(this.currentPage, this.pageSize).toPromise();
+      const response: User[] | undefined = await this.formularioService.recibirDatosUsers().toPromise();
       if (response !== undefined) {
-        console.log('Respuesta del servidor:', response);
-        this.users = response.users;
-        this.totalPages = response.lastPage;
+        //console.log('Respuesta del servidor:', response);
+        this.users = response;
+        console.log('users', this.users);
+        
       } else {
         console.log('No hay respuesta');
       }
@@ -70,21 +71,21 @@ export class UserTableComponent {
       console.log('Updating', this.users[index].id);
       this.id = this.users[index].id!;
       this.userData(index);
-      console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('nombre', this.nombre);
-      console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('gr ID', this.group_id);
+      console.log('name', this.name);
+      console.log('gr ID', this.group_id);
+      console.log('gr ID', this.group_id);
+      console.log('gr ID', this.group_id);
 
     } else {
       this.updating = true;
       console.log('Updating', this.users[index]);
       this.userData(index);
-      console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('nombre', this.nombre);
-      console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('gr ID', this.grupo_perteneciente_id);
-      console.log('gr ID', this.grupo_perteneciente_id);
+      console.log('gr ID', this.group_id);
+      console.log('name', this.name);
+      console.log('gr ID', this.group_id);
+      console.log('gr ID', this.group_id);
+      console.log('gr ID', this.group_id);
     }
   }
 
@@ -92,8 +93,8 @@ export class UserTableComponent {
     const user = this.users[index];
     if (user) {
       this.reactiveForm.patchValue({
-        grupo_perteneciente_id: user.grupo_perteneciente_id!,
-        nombre: user.nombre!,
+        group_id: user.group_id!,
+        name: user.name!,
         edad: user.edad!,
         rol: user.rol!,
         password: user.password!
@@ -141,8 +142,8 @@ export class UserTableComponent {
   async onSubmit() {
     const userData: User = {
       id: this.reactiveForm.value.id !== undefined ? this.reactiveForm.value.id : null,
-      grupo_perteneciente_id: this.reactiveForm.value.grupo_perteneciente_id !== undefined ? this.reactiveForm.value.grupo_perteneciente_id : null,
-      nombre: this.reactiveForm.value.nombre !== undefined ? this.reactiveForm.value.nombre : null,
+      group_id: this.reactiveForm.value.group_id !== undefined ? this.reactiveForm.value.group_id : null,
+      name: this.reactiveForm.value.name !== undefined ? this.reactiveForm.value.name : null,
       edad: this.reactiveForm.value.edad !== undefined ? this.reactiveForm.value.edad : null,
       rol: this.reactiveForm.value.rol !== undefined ? this.reactiveForm.value.rol : null,
       password: this.reactiveForm.value.password !== undefined ? this.reactiveForm.value.password : null
