@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body {
+  max-width: 100%;
   font-family: 'Roboto', sans-serif;
+  background-color: #904cb4;
 }
 
 .nav-link {
@@ -8,6 +10,7 @@ body {
 }
 
 header {
+  max-width: 100%;
   background-color: #904cb4 !important;
 }
 

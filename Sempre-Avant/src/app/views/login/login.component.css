@@ -10,3 +10,7 @@
     background-color: #904cb4 !important;
     color: white;
 }
+.form{
+    max-width: 70vh;
+    min-height: fit-content;
+}

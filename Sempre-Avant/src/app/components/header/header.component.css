@@ -1,11 +1,40 @@
 .icons{
-    height: 7vh;
+    height: 5vh;
 }
 
+nav {
+    background-color: #904cb4;
+}
 nav a {
     color: white;
 }
 
 nav .dropdown-menu a {
     color: black;
+}
+
+.logout {
+    background: none; /* Elimina cualquier fondo predeterminado */
+    background-image: url("../../../assets/imgs/loogout.png"); /* Aplica tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir el botón */
+    background-position: center; /* Centra la imagen dentro del botón */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border: none; /* Elimina cualquier borde predeterminado */
+    padding: 0; /* Elimina el relleno interno del botón */
+    height: 7vh;
+    width: 7vh;
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
+    outline: none; /* Elimina el borde de enfoque en algunos navegadores */
+    margin: 0; /* Elimina el margen predeterminado */
+    box-shadow: none; /* Elimina cualquier sombra predeterminada */
+}
+
+a{
+    font-size: 20px;
+}
+
+.icon {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
 }

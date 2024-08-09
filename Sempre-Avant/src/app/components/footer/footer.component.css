@@ -12,3 +12,9 @@ iframe{
     height: 100%;
     border: none;
 }
+
+.mapa{
+    height: 30vh;
+    min-width: 30vh;
+    max-width: 60%;
+}

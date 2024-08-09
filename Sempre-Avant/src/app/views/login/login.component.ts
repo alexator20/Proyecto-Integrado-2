@@ -45,7 +45,7 @@ export class LoginComponent {
             if (Array.isArray(response) && response.length > 0) {
               console.log("rol: ", this.rol);
               if (response[0].message == "este no es su contraseña") {
-                this.error = "error";
+                this.error = "error 1234";
 
               } else {
 
@@ -65,7 +65,7 @@ export class LoginComponent {
             if (response.user.rol) {
               this.rol = response.user.rol;
             } else {
-              this.rol = "parguela";
+              this.rol = "user";
             }
             console.log("rol: ", this.rol);
 
