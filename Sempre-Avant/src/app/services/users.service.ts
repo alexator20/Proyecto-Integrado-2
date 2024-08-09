@@ -11,7 +11,7 @@ export class UsersService {
   constructor(public http: HttpClient) { }
 
   enviarDatosInsert(formData: User) {
-    return this.http.post('http://localhost:8000/insertUser', formData);
+    return this.http.post('http://localhost:8000/api/insertUser', formData);
   }
 
   enviarDatosUpdate(id: string, formData: User) {
@@ -21,7 +21,7 @@ export class UsersService {
       console.log('??????');
     }
     
-    return this.http.post(`http://localhost:8000/updateUser/${id}`, formData);
+    return this.http.post(`http://localhost:8000/api/updateUser/${id}`, formData);
   }
 
   enviarDatosDel(id: string) {

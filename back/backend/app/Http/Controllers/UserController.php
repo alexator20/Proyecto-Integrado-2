@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -30,7 +31,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Log::info('Request Data:', $request->all());
+
     }
 
     /**
@@ -52,9 +54,30 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // Encuentra el usuario por el ID
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        // Obtén los datos del request
+        $data = $request->all();
+
+        // Elimina el campo 'password' si es nulo o si no se quiere actualizar
+        if (is_null($data['password']) || empty($data['password'])) {
+            unset($data['password']);
+        } else {
+            // Si se proporciona una contraseña, asegúrate de encriptarla antes de guardarla
+            $data['password'] = bcrypt($data['password']);
+        }
+
+        // Actualiza los campos del usuario con los datos filtrados
+        $user->update($data);
+
+        return response()->json(['message' => 'User updated successfully', 'user' => $user], 200);
     }
 
     /**

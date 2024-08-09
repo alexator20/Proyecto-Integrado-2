@@ -4,7 +4,7 @@ export interface User {
     name: string | null;
     edad: string | null;
     rol: string | null;
-    password: string | null;
+    password?: string|null;
 }
 
 export interface UserIdIncluded{

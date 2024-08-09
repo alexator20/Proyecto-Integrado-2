@@ -16,10 +16,9 @@ class AuthController extends Controller
 
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
         ]);
-
+        $data['email'] = $data['name'].'@example.com';
         $user = User::create($data);
         $token = $user->createToken('auth_token')->plainTextToken;
 

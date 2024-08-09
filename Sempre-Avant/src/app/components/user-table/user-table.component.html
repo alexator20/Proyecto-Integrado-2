@@ -33,7 +33,7 @@
     <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
 </div>
 }
-@if (users.length <=0 && updating==true) { <h2> Los datos se están cargando y esto puede tomar un buen rato </h2>
+@if (users.length <=0 && updating==true) { <h2> Los datos se están cargando... </h2>
     }
 
     @if (updating == false){
@@ -91,15 +91,6 @@
                                                     <label for="rol" class="form-label">Rol</label>
                                                     <input style="border: 2px solid #904cb4 !important;" id="rol"
                                                         formControlName="rol" type="text" class="form-control" id="rol">
-                                                </div>
-                                            </div>
-
-                                            <div class="row justify-content-center">
-                                                <div class="mb-3 col-12">
-                                                    <label for="password" class="form-label">Contraseña</label>
-                                                    <input style="border: 2px solid #904cb4 !important;" id="password"
-                                                        formControlName="password" type="password" class="form-control"
-                                                        id="password">
                                                 </div>
                                             </div>
 

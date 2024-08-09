@@ -26,6 +26,7 @@ export class LoginComponent {
   public error: string = "";
 
 
+
   constructor(public formularioService: LoginService, private router: Router) { }
 
   onSubmit() {

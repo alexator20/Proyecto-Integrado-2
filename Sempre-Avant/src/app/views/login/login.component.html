@@ -14,43 +14,44 @@
                             <div class="col-12">
 
                                 <!-- form -->
-                                
-                                <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
-                                    <div class="container col-12 col-md-7 justify-content-center">
-                                        <div class="row justify-content-center">
-                                            <div class="mb-3 col-12">
-                                                <label for="username" class="form-label">Username</label>
-                                               <input style="border: 2px solid #904cb4 !important;" id="username" formControlName="username" type="text"
-                                                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                                <div id="emailHelp" class="form-text">Tu usuario personal y tu contraseña de grupo.
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="row justify-content-center">
-                                            <div class="mb-3 col-12">
-                                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                                <input style="border: 2px solid #904cb4 !important;" id="password" formControlName="password" type="password"
-                                                    class="form-control" id="exampleInputPassword1">
-                                            </div>
-                                        </div>
-                                        @if(error=="error"){
+                              
+                                    <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+                                        <div class="container col-12 col-md-7 justify-content-center">
                                             <div class="row justify-content-center">
                                                 <div class="mb-3 col-12">
-                                                    <p style="background-color: red;
-                                                    background-clip: text;
-                                                    color: transparent;">Error en la contraseña </p>
+                                                    <label for="username" class="form-label">Username</label>
+                                                   <input style="border: 2px solid #904cb4 !important;" id="username" formControlName="username" type="text"
+                                                        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                    <div id="emailHelp" class="form-text">Tu usuario personal y tu contraseña de grupo.
+                                                    </div>
                                                 </div>
                                             </div>
-                                        }
-
-                                        <div class="row">
-                                            <div class="mb-3 col-9 col-md-3">
-                                                <button type="submit" class="btn">Submit</button>
+        
+                                            <div class="row justify-content-center">
+                                                <div class="mb-3 col-12">
+                                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                                    <input style="border: 2px solid #904cb4 !important;" id="password" formControlName="password" type="password"
+                                                        class="form-control" id="exampleInputPassword1">
+                                                </div>
+                                            </div>
+                                            @if(error=="error"){
+                                                <div class="row justify-content-center">
+                                                    <div class="mb-3 col-12">
+                                                        <p style="background-color: red;
+                                                        background-clip: text;
+                                                        color: transparent;">Error en la contraseña </p>
+                                                    </div>
+                                                </div>
+                                            }
+    
+                                            <div class="row">
+                                                <div class="mb-3 col-9 col-md-3">
+                                                    <button type="submit" class="btn">Submit</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                            
                                 <!-- form -->
 
                             </div>
