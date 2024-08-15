@@ -18,3 +18,27 @@ iframe{
     min-width: 30vh;
     max-width: 60%;
 }
+
+a{
+    font-size: 30px;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    font-size: 32px;
+}
+
+h5{
+    margin-top: 5px;
+    font-size: 34px;
+}
+
+.small{
+   font-size: 18px;
+   color: white;
+}
+
+.small:hover{
+    font-size: 20px;
+}
