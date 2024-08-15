@@ -1,14 +1,16 @@
 /* Estilos Generales */
 body,
 .text-bg-light {
-    background-color: #f4eaff;
+    background-color: #f4eaff!important;
     /* Fondo morado suave para todo el contenido */
     color: #333;
     /* Color de texto oscuro para contraste */
 }
 
-.container {
+.container,
+.container-fluid {
     padding: 20px;
+    background-color: white;
 }
 
 /* Estilos para las tarjetas */
