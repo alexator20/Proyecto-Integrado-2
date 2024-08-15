@@ -3,3 +3,6 @@ img {
   width: 100px;
 }
 
+.container-fluid{
+  background-color: white;
+}
