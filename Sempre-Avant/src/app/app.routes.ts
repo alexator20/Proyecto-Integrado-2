@@ -33,6 +33,7 @@ import { adminGuard } from './admin.guard';
 import { NostrahistoriaComponent } from './views/nostrahistoria/nostrahistoria.component';
 import { EscultismoComponent } from './views/escultismo/escultismo.component';
 import {EscultismoCastComponent} from './views/escultismo-cast/escultismo-cast.component';
+import {OrganizaCastComponent} from './views/organiza-cast/organiza-cast.component';
 
 
 export const routes: Routes = [
@@ -66,6 +67,7 @@ export const routes: Routes = [
     { path: 'videos', component: VideosComponent },
     { path: 'audios', component: AudiosComponent },
     { path: 'organizacion', component: OrganizacionComponent },
+    { path: 'organizacion-cast', component: OrganizaCastComponent },
     { path: 'publicacions', component: PublicacionsComponent},
     { path: 'calendario', component: CalendarioComponent },
     {path: 'nostrahistoria', component: NostrahistoriaComponent},

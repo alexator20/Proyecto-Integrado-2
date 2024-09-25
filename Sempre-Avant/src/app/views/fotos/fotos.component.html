@@ -1,23 +1,33 @@
-<h1>Galería de fotos</h1>
+<div class="container-fluid">
+    <h1>Galería de fotos</h1>
 
-<div class="row">
-    <div class="col-md-6">
-        <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
-
-            <label for="routes">Elige un año para mostrar las fotos:</label>
-
-            <select name="routes" id="routes" required autofocus>
-
-                @for (item of rutas; track item; let i = $index) {
-                <option (click)="onFolder(i)" [value]=item.title formControlName="routes" >{{item.title}}</option>
-                }
-
-            </select>
-            
-            <div class="mb-3 col-9 col-md-3">
-                <button type="submit" class="btn">Submit</button>
-            </div>
-
-        </form>
+    <div class="row">
+        <div class="col-md-6">
+            <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+    
+                <label for="routes">Elige un año para mostrar las fotos:</label>
+    
+                <select name="routes" id="routes" required autofocus>
+    
+                    @for (item of rutas; track item; let i = $index) {
+                    <option (click)="onFolder(i)" [value]=item.title formControlName="routes" >{{item.title}}</option>
+                    }
+    
+                </select>
+                
+                <div class="mb-3 col-9 col-md-3">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+    
+            </form>
+        </div>
+        <div class="container mb cons">
+            <img src="http://1.bp.blogspot.com/_sdyLaZ0ibi0/S9380-su9dI/AAAAAAAAAAM/Ilp0l1b34uQ/s400/under-construction.png"
+                height="150px" alt="zona en construccion">
+            <span>Apartat en construcció</span>
+        </div>
     </div>
+
+    
+    
 </div>

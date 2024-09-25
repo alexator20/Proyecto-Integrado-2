@@ -34,7 +34,6 @@ img {
 .card{
     margin:5px;
     border-width: 3px;
-    border-color: rgb(148, 107, 148);
 }
 
 .text-bg-light {
@@ -53,4 +52,8 @@ a{
 
 .titulo{
     margin-top: 2vh;
+}
+.container-fluid {
+    background-color: #f8f9fa; /* Un fondo claro para toda la galería */
+    padding: 20px;
 }

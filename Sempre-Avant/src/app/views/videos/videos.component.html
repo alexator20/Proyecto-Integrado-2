@@ -1,24 +1,38 @@
 <div class="container-fluid">
-    <div class="card text-bg-light">
-        <div class="card-body">
-            <h1 class="titCard">Galería de videos</h1>
-            <!--  -->
-            <div class="row">
-                @for (item of videos; track item) {
-
-                <div class="col-md-6 carta">
-                    <div class="card">
-                        <iframe [src]=item.src width="600"
-                            height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen class="m-auto"></iframe>
-                        <div class="card-body">
-                            <h5 class="card-title">{{item.title}}</h5>
-                            <p class="card-text">{{item.text}}</p>
+    <div class="row mt-3 mb-0" style="height: 1vh;">
+        <div class="col-12">
+          
+        </div>
+  
+      </div>
+    <div class="container-fluid">
+        <div class="card text-bg-light">
+            <div class="card-body">
+                <h1 class="titCard">Galería de videos</h1>
+                <!--  -->
+                <div class="row">
+                    @for (item of videos; track item) {
+    
+                    <div class="col-md-6 carta">
+                        <div class="card">
+                            <iframe [src]=item.src width="600"
+                                height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen class="m-auto"></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.title}}</h5>
+                                <p class="card-text">{{item.text}}</p>
+                            </div>
                         </div>
                     </div>
+                    }
                 </div>
-                }
             </div>
         </div>
+        <div class="row mt-3 mb-0" style="height: 1vh;">
+            <div class="col-12">
+              
+            </div>
+      
+          </div>
     </div>
 </div>
