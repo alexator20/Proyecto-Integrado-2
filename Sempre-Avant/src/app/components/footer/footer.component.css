@@ -14,9 +14,7 @@ iframe{
 }
 
 .mapa{
-    height: 30vh;
-    min-width: 30vh;
-    max-width: 60%;
+    width: 100%;
 }
 
 a{

@@ -34,6 +34,7 @@ import { NostrahistoriaComponent } from './views/nostrahistoria/nostrahistoria.c
 import { EscultismoComponent } from './views/escultismo/escultismo.component';
 import {EscultismoCastComponent} from './views/escultismo-cast/escultismo-cast.component';
 import {OrganizaCastComponent} from './views/organiza-cast/organiza-cast.component';
+import {NostrahistCastComponent} from './views/nostrahist-cast/nostrahist-cast.component';
 
 
 export const routes: Routes = [
@@ -71,6 +72,7 @@ export const routes: Routes = [
     { path: 'publicacions', component: PublicacionsComponent},
     { path: 'calendario', component: CalendarioComponent },
     {path: 'nostrahistoria', component: NostrahistoriaComponent},
+    {path: 'nuestrahistoria', component: NostrahistCastComponent},
     {path: 'escultismo', component: EscultismoComponent},
     {path: 'escultismo-cast', component: EscultismoCastComponent}
 

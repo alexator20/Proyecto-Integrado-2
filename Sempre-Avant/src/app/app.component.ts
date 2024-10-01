@@ -18,6 +18,10 @@ export class AppComponent {
   title = 'Sempre-Avant';
   public test: boolean = false;
   // se necesita la logica para cambiar el boolean a verdadero
+
+  ngOnInit(): void {
+    console.log("Testeando el main, valor de test: ",this.test); 
+  }
   }
 
    

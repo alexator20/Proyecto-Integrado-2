@@ -19,6 +19,8 @@ export class HeaderComponent {
 
   ngOnInit() {
     console.log(this.rol);
+    console.log("val", this.val);
+    
 
   }
 
