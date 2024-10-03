@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 
@@ -15,13 +15,18 @@ export class HeaderComponent {
   constructor(private router: Router) { }
 
   public rol: string | null = localStorage.getItem('rol');
-  public val: boolean = true;
+  @Input() val: boolean = true;
 
   ngOnInit() {
     console.log(this.rol);
-    console.log("val", this.val);
-    
+    console.log("val en header: ", this.val);
+  }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['val']) {
+      console.log('Header lang changed:', this.val);
+      // Implement your logic to switch headers based on val here
+    }
   }
 
   public logout(): void {

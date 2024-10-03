@@ -1,25 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-nostrahist-cast',
   standalone: true,
   imports: [],
   templateUrl: './nostrahist-cast.component.html',
-  styleUrl: './nostrahist-cast.component.css'
+  styleUrls: ['./nostrahist-cast.component.css']
 })
-export class NostrahistCastComponent {
+export class NostrahistCastComponent implements OnInit {
   public val: boolean = false;
-  @Output()lang = new EventEmitter<boolean>();
+  public passVal?: boolean;
+
+  constructor(private languageService: LanguageService) {} // Inject the service
 
   ngOnInit() {
     console.log('hola');
     console.log(this.val);
-    this.emmit();
-    
+    this.emit();
   }
 
-  emmit(){
+  emit() {
     console.log("Emitting: ", this.val);
-    this.lang.emit(this.val);
+    this.languageService.setLang(this.val); // Use the service to set the language
   }
 }
