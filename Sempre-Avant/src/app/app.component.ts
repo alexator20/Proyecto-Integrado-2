@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   public test: boolean = false;
   public lang: boolean = true;
 
-  constructor(private languageService: LanguageService) {} // Inject the service
+  constructor(private languageService: LanguageService, private cdr: ChangeDetectorRef) {} // Inject the service
   // se necesita la logica para cambiar el boolean a verdadero
   ngOnInit(): void {
     console.log("Testeando el main, valor de test: ", this.test);
@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
     this.languageService.lang$.subscribe(lang => {
       this.lang = lang; // Update lang whenever it changes
       console.log("Lang recibido en main: ", this.lang);
+      this.cdr.detectChanges(); // Fixing change detection issue
     });
   }
 
