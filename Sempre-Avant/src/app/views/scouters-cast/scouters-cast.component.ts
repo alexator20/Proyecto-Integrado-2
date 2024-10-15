@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './scouters-cast.component.html',
-  styleUrl: './scouters-cast.component.css'
+  styleUrl: '../scouters/scouters.component.css'
 })
 export class ScoutersCastComponent {
 

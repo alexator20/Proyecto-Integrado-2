@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './esculta-cast.component.html',
-  styleUrl: './esculta-cast.component.css'
+  styleUrl: '../esculta/esculta.component.css'
 })
 export class EscultaCastComponent {
 

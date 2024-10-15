@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './clan-cast.component.html',
-  styleUrl: './clan-cast.component.css'
+  styleUrl: '../clan/clan.component.css'
 })
 export class ClanCastComponent {
 

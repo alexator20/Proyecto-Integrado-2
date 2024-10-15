@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './manada-cast.component.html',
-  styleUrl: './manada-cast.component.css'
+  styleUrl: '../manada/manada.component.css'
 })
 export class ManadaCastComponent {
 

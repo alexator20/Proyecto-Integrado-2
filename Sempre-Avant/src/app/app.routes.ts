@@ -9,6 +9,7 @@ import { ClanComponent } from './views/clan/clan.component';
 import { ScoutersComponent } from './views/scouters/scouters.component';
 import { BadenPowellComponent } from './views/baden-powell/baden-powell.component';
 import { CronologiaComponent } from './views/cronologia/cronologia.component';
+import { CronologiaCastComponent } from './views/cronologia-cast/cronologia-cast.component';
 import { HomeCastComponent } from './views/home-cast/home-cast.component';
 import { CastoresCastComponent } from './views/castores-cast/castores-cast.component';
 import { ManadaCastComponent } from './views/manada-cast/manada-cast.component';
@@ -55,6 +56,7 @@ export const routes: Routes = [
     { path: 'clan-cast', component: ClanCastComponent },
     { path: 'scouters', component: ScoutersComponent },
     { path: 'cronologia', component: CronologiaComponent },
+    { path: 'cronologia-cast', component: CronologiaCastComponent },
     { path: 'scouters-cast', component: ScoutersCastComponent },
     { path: 'badenpowell', component: BadenPowellComponent },
     { path: 'badenpowell-cast', component: BadenpowellCastComponent },

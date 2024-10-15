@@ -6,7 +6,7 @@ import { JumbotronComponent } from '../../components/jumbotron/jumbotron.compone
   standalone: true,
   imports: [],
   templateUrl: './castores-cast.component.html',
-  styleUrl: './castores-cast.component.css'
+  styleUrl: '../castores/castores.component.css'
 })
 export class CastoresCastComponent {
 

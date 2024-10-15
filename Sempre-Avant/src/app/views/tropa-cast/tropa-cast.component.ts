@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './tropa-cast.component.html',
-  styleUrl: './tropa-cast.component.css'
+  styleUrl: '../tropa/tropa.component.css'
 })
 export class TropaCastComponent {
 
